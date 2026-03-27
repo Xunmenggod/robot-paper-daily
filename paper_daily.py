@@ -55,7 +55,7 @@ LLM_API_KEY = os.getenv("PAPER_TOKEN")  # 从环境变量读取密钥
 LLM_API_HOST = "api.chatanywhere.org" # https://github.com/chatanywhere/GPT_API_free
 LLM_API_ENDPOINT = "/v1/chat/completions"
 LLM_MODEL = "gpt-4o-mini"
-    LLM_PROMPT = os.getenv("EMBODIED_PROMPT")
+LLM_PROMPT = os.getenv("EMBODIED_PROMPT")
 
 # 爬取配置
 REQUEST_INTERVAL = 1.2
