@@ -56,6 +56,7 @@ LLM_API_HOST = "api.chatanywhere.org" # https://github.com/chatanywhere/GPT_API_
 LLM_API_ENDPOINT = "/v1/chat/completions"
 LLM_MODEL = "gpt-4o-mini"
 LLM_PROMPT = os.getenv("EMBODIED_PROMPT")
+print(f"api: {LLM_API_KEY}, prompt: {LLM_PROMPT}")
 
 # 爬取配置
 REQUEST_INTERVAL = 1.2
