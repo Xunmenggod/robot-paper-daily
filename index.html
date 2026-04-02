@@ -621,7 +621,7 @@
         <header>
             <h1>🤖 arXiv 机器人领域论文汇总</h1>
             <div class="intro">
-                <p>📊 共 <strong>200</strong> 篇｜仅显示最近 5 天数据｜⭐ 相关性评分 1-5 分</p>
+                <p>📊 共 <strong>239</strong> 篇｜仅显示最近 5 天数据｜⭐ 相关性评分 1-5 分</p>
                 <p>🔗 点击日期可展开/折叠｜📚 Zotero 按钮需安装 <a href="https://www.zotero.org/download/connectors" target="_blank">Connector 插件</a></p>
             </div>
         </header>
@@ -629,17 +629,862 @@
         <!-- 日期导航 -->
         <nav class="nav">
             <strong>📅 日期导航：</strong>
-            <a href="#date-20260401">2026-04-01（44篇）</a> | <a href="#date-20260331">2026-03-31（90篇）</a> | <a href="#date-20260330">2026-03-30（28篇）</a> | <a href="#date-20260329">2026-03-29（38篇）</a>
+            <a href="#date-20260402">2026-04-02（39篇）</a> | <a href="#date-20260401">2026-04-01（44篇）</a> | <a href="#date-20260331">2026-03-31（90篇）</a> | <a href="#date-20260330">2026-03-30（28篇）</a> | <a href="#date-20260329">2026-03-29（38篇）</a>
         </nav>
 
         <!-- 论文内容区块 -->
         <main>
-            <div class="date-section" id="date-20260401">
+            <div class="date-section" id="date-20260402">
     <div class="date-header">
-        <span>2026-04-01（44篇论文）</span>
+        <span>2026-04-02（39篇论文）</span>
         <span class="arrow">▼</span>
     </div>
     <div class="date-content" style="display: block;">
+        <table>
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>作者</th>
+                <th>资源</th>
+                <th style="text-align:center">相关性</th>
+                <th>总结</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   该论文介绍了一个名为 SoftAct 的框架，用于将人类的操控技能转移到非人类的软机器人手上。通过显式地考虑接触力和接触几何，SoftAct 采用了两阶段的力感知重定向算法来优化人类演示中的接触点和力分布，而不是直接重定向关节轨迹。这种方法使得软机器人能够在多种接触密集的操控任务中有效地复制人类的功能意图。  2. 是否属于 World Model：   结论：否   ...">Functional Force-Aware Retargeting from Virtual Human Demos to Soft Robot Policies</span></td>
+        <td class="author-cell">Uksang Yoo</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01224" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+该论文介绍了一个名为 SoftAct 的框架，用于将人类的操控技能转移到非人类的软机器人手上。通过显式地考虑接触力和接触几何，SoftAct 采用了两阶段的力感知重定向算法来优化人类演示中的接触点和力分布，而不是直接重定向关节轨迹。这种方法使得软机器人能够在多种接触密集的操控任务中有效地复制人类的功能意图。
+
+2. 是否属于 World Model：  
+结论：否  
+理由：SoftAct 的核心是将人类的操控技能转移到非人类的软机器人手上，侧重于接触力和接触几何的优化，而非学习世界如何随动作演化或预测未来状态。虽然涉及对接触的建模和优化，但缺乏对环境和状态预测的关注，因此不符合 World Model 的定义。
+
+3. 是否属于 VLA：  
+结论：否  
+理由：论文没有明确指出其输入包含视觉和语言。虽然提到通过虚拟现实捕获人类的示范，但主要关注的是基于接触信息的运动重定向，而不是视觉和语言之间的交互作用。因此，此论文不符合 VLA 的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：  
+结论：否  
+理由：尽管论文提到对操控技能的转移，但使用的平台是“非人类”的软机器人手，而不是类人（humanoid）机器人；此外，强调接触和力的优化而非全身协调的运动和操作。因此，任务的执行并不涉及人类类机器人整体运动和操作的联合控制，未达到 Humanoid Loco-manipulation 的标准。
+
+5. 最终标签总结  
+不属于 World Model、VLA 或 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+本论文可能在提到的&quot;人类示范&quot;和&quot;操控技能转移&quot;时造成一定混淆。虽然它与类人操作相关，但涉及的是技术上不同的非类人软机器人手，因此不能被归类为 Humanoid Loco-manipulation。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**   这篇论文的核心任务是提出一种基于多智能体近端策略优化（MAPPO）的学习方法，用于协调多种机器人的任务分配和路径规划。这种学习框架旨在处理多机器人团队在复杂环境中的协作，以实现科学测量和高效的路径规划，特别是在行星探索任务中。  2. **是否属于 World Model**   **结论**：不属于   **理由**：虽然论文涉及路径规划和任务调度，但其重点是...">Collaborative Task and Path Planning for Heterogeneous Robotic Teams using Multi-Agent PPO</span></td>
+        <td class="author-cell">Matthias Rubio</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01213" target="_blank" rel="noopener">📄 PDF</a><br><a class="resource-tag code" href="https://github.com/leggedrobotics/multi_robot_global_planner" target="_blank" rel="noopener">🔗 Code1</a><br><details class="resource-comment"><summary>📝 备注</summary><small>associated code onthis https URL</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+这篇论文的核心任务是提出一种基于多智能体近端策略优化（MAPPO）的学习方法，用于协调多种机器人的任务分配和路径规划。这种学习框架旨在处理多机器人团队在复杂环境中的协作，以实现科学测量和高效的路径规划，特别是在行星探索任务中。
+
+2. **是否属于 World Model**  
+**结论**：不属于  
+**理由**：虽然论文涉及路径规划和任务调度，但其重点是在多机器人系统中合作完成任务，而不是学习环境如何随动作演化（即世界模型的核心）。模型的输出是机器人动作，而不是对未来状态的预测。
+
+3. **是否属于 VLA**  
+**结论**：不属于  
+**理由**：尽管论文提到在复杂环境中的协作和任务分配，但输入并不包含视觉和语言信息，而主要集中在机器人的任务分配和路径规划，并未强调视觉-语言的集成。
+
+4. **是否属于 Humanoid Loco-manipulation**  
+**结论**：不属于  
+**理由**：虽然该论文涉及多种类型的机器人，这些机器人可能具有不同的移动能力和任务执行能力，但并没有专门聚焦于人形机器人或同时涉及人形机器人的定向移动和物体操作，因此不符合人形机器人运动与操作联合控制的定义。
+
+5. **最终标签总结**  
+这篇论文不属于World Model、VLA或Humanoid Loco-manipulation。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+最容易混淆的点在于该论文涉及多种机器人任务的联合控制和路径规划，而这在表面上可能给人一种与VLA或Humanoid Loco-manipulation相关的感觉，但深入分析后可发现它并不满足这些类别的严格定义。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：此论文介绍了一个用于Florence-2的ROS 2包装器，该包装器实现了多模式的本地视觉-语言推理，旨在提升视觉-语言模型在机器人系统中的可用性和集成性。  2. 是否属于 World Model：否。尽管该论文涉及到视觉模型预测和理解任务，但其焦点在于模型的集成和部署，没有显著的关于环境状态预测或计划的内容。  3. 是否属于 VLA：是。该论文的主题围绕视觉-语言模型...">A ROS 2 Wrapper for Florence-2: Multi-Mode Local Vision-Language Inference for Robotic Systems</span></td>
+        <td class="author-cell">J. E. Domínguez-Vidal</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01179" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：此论文介绍了一个用于Florence-2的ROS 2包装器，该包装器实现了多模式的本地视觉-语言推理，旨在提升视觉-语言模型在机器人系统中的可用性和集成性。
+
+2. 是否属于 World Model：否。尽管该论文涉及到视觉模型预测和理解任务，但其焦点在于模型的集成和部署，没有显著的关于环境状态预测或计划的内容。
+
+3. 是否属于 VLA：是。该论文的主题围绕视觉-语言模型Florence-2的应用，模型输入包含视觉数据（图像）和语言信息（任务描述），输出是机器人在特定场景中的动作或反应，符合VLA的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：否。虽然论文提到了在机器人系统中的应用，但没有具体阐述任务涉及humanoid的步态和操纵的联合控制，也没有说明使用的是humanoid机器人平台。
+
+5. 最终标签总结：VLA
+
+6. 如果有歧义，请说明最容易混淆的点：与World Model的混淆点在于，论文中提到的启用视觉模型的能力可能会给人以学习环境动态的印象，但实际上，它的重点是如何将现有模型有效集成进ROS 2框架，而非世界模型学习的预测与计划任务。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   本论文提出了SMASH，一个用于人形机器人的乒乓球系统，通过实时的自我感知和全身协调能力，实现了快速且精确的乒乓球击打能力，且无需外部摄像头。系统通过学习任务相关的动作和运动先验，展示了多种击球风格和高效的动作生成能力，能够在迅速的动态环境中完成连续击球。  2. 是否属于 World Model：否   理由：该论文的焦点在于实现人形机器人的运动控制和击球技能的提高，...">SMASH: Mastering Scalable Whole-Body Skills for Humanoid Ping-Pong with Egocentric Vision</span></td>
+        <td class="author-cell">Junli Ren</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01158" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+本论文提出了SMASH，一个用于人形机器人的乒乓球系统，通过实时的自我感知和全身协调能力，实现了快速且精确的乒乓球击打能力，且无需外部摄像头。系统通过学习任务相关的动作和运动先验，展示了多种击球风格和高效的动作生成能力，能够在迅速的动态环境中完成连续击球。
+
+2. 是否属于 World Model：否  
+理由：该论文的焦点在于实现人形机器人的运动控制和击球技能的提高，而不是在学习环境如何随着动作演化。虽然提到了动作生成和预测未来击球能力，但并没有强调对世界模型的构建和序列决策的规划能力。
+
+3. 是否属于 VLA：否  
+理由：虽然论文中涉及视觉感知，但没有提到语言输入的使用。输入主要涉及自我感知（egocentric perception）以交互和反应于动态环境，而输出是机器人动作，但不包括语言处理或展示。
+
+4. 是否属于 Humanoid Loco-manipulation：是  
+理由：该系统专注于人形机器人在乒乓球的整合控制，涉及 locomotion（如快速移动和调整位点）和 manipulation（如精准击球）的联合控制，并强调了全身协调能力的需求。
+
+5. 最终标签总结  
+Humanoid Loco-manipulation
+
+6. 如果有歧义，请说明最容易混淆的点  
+最容易混淆的点在于模型的感知能力及输出。虽然其涉及视觉和动作预测，但缺乏语言输入，因此不符合VLA的定义。此外，由于强调了全身协调和动态响应，可能让人一时间联想到更为通用的动作学习或世界建模，但其具体实现和目标更倾向于人形运动控制的任务切入。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**   这篇论文的核心任务是提高在分配偏移下的机器人操作的鲁棒性，具体方法是结合深度强化学习（Deep Reinforcement Learning, DDPG）和界限极值寻求（Bounded Extremum Seeking, ES）来完成推送和拾取放置任务。该控制器旨在利用RL提供快速操作行为，同时用界限ES确保在操作条件变动时的整体控制器的鲁棒性。  2. **是...">Deep Reinforcement Learning for Robotic Manipulation under Distribution Shift with Bounded Extremum Seeking</span></td>
+        <td class="author-cell">Shaifalee Saxena</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01142" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+这篇论文的核心任务是提高在分配偏移下的机器人操作的鲁棒性，具体方法是结合深度强化学习（Deep Reinforcement Learning, DDPG）和界限极值寻求（Bounded Extremum Seeking, ES）来完成推送和拾取放置任务。该控制器旨在利用RL提供快速操作行为，同时用界限ES确保在操作条件变动时的整体控制器的鲁棒性。
+
+2. **是否属于 World Model：** 结论：**不属于**  
+   理由：虽然论文提到了操作环境的变化以及如何保持鲁棒性，但是核心任务并不是学习世界模型来预测未来状态。它侧重于通过结合 RL 和 ES 来适应变化，而没有提及通过模型来推断未来的状态或奖励。
+
+3. **是否属于 VLA：** 结论：**不属于**  
+   理由：模型输入并不包括视觉信息或语言信息，主要是基于控制的反馈和动作，输出是机器人在特定任务下的操作，因此不符合 VLA 的定义。
+
+4. **是否属于 Humanoid Loco-manipulation：** 结论：**不属于**  
+   理由：虽然涉及机器人操作，但并未明确提到使用类人机器人的平台，也没有涉及行走（locomotion）和操作（manipulation）的联合控制。因此，这个任务并不符合 Humanoid Loco-manipulation 的标准。
+
+5. **最终标签总结**  
+这篇论文不属于 World Model、VLA 或 Humanoid Loco-manipulation，工作主要集中在提升分布变化下的鲁棒性，而不是构建世界模型或处理行走与操作的同步。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+最容易混淆的点可能是论文中提到的结合多种控制方法的技术，可能会让人认为其涉及复杂的环境预测和控制规划。然而，论文的确切贡献是如何在操作中提高鲁棒性，因此不能简单归入世界模型或其他高层次的框架。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   这篇论文提出了一个名为 VRUD 的无人机数据集，旨在捕捉复杂城市混合交通环境中车辆与易受伤道路用户（VRUs）之间的互动。通过构建高精度无规则数据集，研究不同交通参与者的互动行为，以支持自动驾驶系统（ADS）的发展。  2. 是否属于 World Model：否   理由：论文主要关注数据集的构建与行为捕捉，而非学习环境随动作的演化过程或预测未来状态，缺乏关于未来状态...">VRUD: A Drone Dataset for Complex Vehicle-VRU Interactions within Mixed Traffic</span></td>
+        <td class="author-cell">Ziyu Wang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01134" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+这篇论文提出了一个名为 VRUD 的无人机数据集，旨在捕捉复杂城市混合交通环境中车辆与易受伤道路用户（VRUs）之间的互动。通过构建高精度无规则数据集，研究不同交通参与者的互动行为，以支持自动驾驶系统（ADS）的发展。
+
+2. 是否属于 World Model：否  
+理由：论文主要关注数据集的构建与行为捕捉，而非学习环境随动作的演化过程或预测未来状态，缺乏关于未来状态或奖励的模型推理。
+
+3. 是否属于 VLA：否  
+理由：论文虽然提到交通参与者之间的互动，但其核心是关于数据集的创建，而不是输入视觉与语言的组合来生成机器人动作，因此不符合 VLA 的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：否  
+理由：该研究没有涉及到人形机器人（humanoid）的整体协调和控制任务，仅关注交通参与者的行为，且不涉及 locomotion 和 manipulation 的联合控制。
+
+5. 最终标签总结  
+该论文不属于 World Model、VLA、或 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能的混淆点在于论文提到多代理交互场景，似乎涉及到动作或决策；但实际上它主要是构建数据集及分析行为，缺乏针对动作生成或预测未来状态的模型，清楚地不同于 World Model 或 VLA 的框架。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：该论文提出了一种名为BAT的在线策略切换框架，通过动态选择两个互补的全身RL控制器，平衡敏捷性与稳定性，以控制类人机器人在长期任务中的表现。该框架旨在同时满足不同运动上下文中的敏捷性与精确稳定行为。  2. 是否属于 World Model：否。虽然该论文涉及预测和选择适当的控制政策，但核心不在于学习世界如何演化，而是通过策略切换来优化敏捷性与稳定性，缺乏对未来状态的直接预...">BAT: Balancing Agility and Stability via Online Policy Switching for Long-Horizon Whole-Body Humanoid Control</span></td>
+        <td class="author-cell">Donghoon Baek</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01064" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：该论文提出了一种名为BAT的在线策略切换框架，通过动态选择两个互补的全身RL控制器，平衡敏捷性与稳定性，以控制类人机器人在长期任务中的表现。该框架旨在同时满足不同运动上下文中的敏捷性与精确稳定行为。
+
+2. 是否属于 World Model：否。虽然该论文涉及预测和选择适当的控制政策，但核心不在于学习世界如何演化，而是通过策略切换来优化敏捷性与稳定性，缺乏对未来状态的直接预测或规划机制。
+
+3. 是否属于 VLA：否。该研究并未提到视觉和语言的结合输入/output，主要集中在利用强化学习和策略切换实现类人机器人控制，缺乏视觉-语言的联动。
+
+4. 是否属于 Humanoid Loco-manipulation：是。研究的平台是类人机器人（Unitree G1），并且涉及到运动和操作的联动控制，强调了在长时间任务中的整体协调能力，因此符合humanoid loco-manipulation的定义。
+
+5. 最终标签总结：Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点：可能容易与World Model混淆的点是该论文讨论了运动阶段的预测和政策的切换，但并不专注于自主预测未来状态，而是基于当前状态来选择合适的控制策略，缺乏基于世界模型的全面状态预测功能。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**：    本文旨在推导一种基于核均值嵌入的不动点控制器，应用于长时间覆盖任务。通过引入扩展的误差访问状态，该控制器能够记录过去的访问历史，并优化控制策略以保证在无限时间范围内的覆盖效果，适用于复杂的环境监测任务。  2. **是否属于 World Model**：    - **结论**：是    - **理由**：该论文的核心是学习和优化控制策略以实现长时间的覆盖任...">Infinite-Horizon Ergodic Control via Kernel Mean Embeddings</span></td>
+        <td class="author-cell">Christian Hughes</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01023" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**：
+   本文旨在推导一种基于核均值嵌入的不动点控制器，应用于长时间覆盖任务。通过引入扩展的误差访问状态，该控制器能够记录过去的访问历史，并优化控制策略以保证在无限时间范围内的覆盖效果，适用于复杂的环境监测任务。
+
+2. **是否属于 World Model**：
+   - **结论**：是
+   - **理由**：该论文的核心是学习和优化控制策略以实现长时间的覆盖任务，涉及到对状态访问历史的记录和未来控制合成的解耦，符合World Model的学习环境状态演化的特点。
+
+3. **是否属于 VLA**：
+   - **结论**：否
+   - **理由**：该论文的输入没有涉及视觉和语言的元素，主要聚焦于控制算法和优化问题，缺少VLA所需的视觉和语言结合的输入。
+
+4. **是否属于 Humanoid Loco-manipulation**：
+   - **结论**：否
+   - **理由**：论文中并未提到使用人形机器人（humanoid）平台，且任务不包括联合的运动（locomotion）和操控（manipulation）控制，因此不符合此类别的要求。
+
+5. **最终标签总结**：
+   - **World Model**：是
+   - **VLA**：否
+   - **Humanoid Loco-manipulation**：否
+
+6. **如果有歧义，请说明最容易混淆的点**：
+   本文可能在探讨长时间任务覆盖时与Humanoid Loco-manipulation混淆，但由于其不涉及使用人形机器人以及不进行联合运动和操控控制，因此清晰区分为不属于此类别。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span>An Integrated Soft Robotic System for Measuring Vital Signs in Search and Rescue Environments</span></td>
+        <td class="author-cell">Jorge Francisco García-Samartín</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00971" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>大模型总结失败<br><small style="color:#dc3545">⚠️ API 状态码异常：403，响应：{&quot;error&quot;:{&quot;message&quot;:&quot;免费API限制模型输入token小于4096，如有更多需求，请访问 https://api.chatanywhere.tech/#/shop 购买付费API。The number of prompt tokens for free accounts is limited to 4096. If you have additional requirements, please visit https://api.chatanywhere.tech/#/shop to purchase a premium key.(当前请求使用的ApiKey: sk-ZfY****Oh79)【如果您遇到问题，欢迎加入QQ群咨询：836739524】&quot;,&quot;type&quot;:&quot;chatanywhere_error&quot;,&quot;param&quot;:null,&quot;code&quot;:&quot;403 FORBIDDEN&quot;}}</small></small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**   该论文提出了一种基于全景视觉惯性SLAM（VI-SLAM）的方法，旨在通过全景相机的全方位视觉输入来提高无人机（UAV）的位姿估计的准确性和鲁棒性。论文还构建了一个涵盖多种飞行条件的真实世界数据集，以支持全景VI-SLAM的研究和评估。  2. **是否属于 World Model**：   **结论**：否。   **理由**：虽然论文讨论了状态估计和环境建模...">PanoAir: A Panoramic Visual-Inertial SLAM with Cross-Time Real-World UAV Dataset</span></td>
+        <td class="author-cell">Yiyang Wu</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00852" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+该论文提出了一种基于全景视觉惯性SLAM（VI-SLAM）的方法，旨在通过全景相机的全方位视觉输入来提高无人机（UAV）的位姿估计的准确性和鲁棒性。论文还构建了一个涵盖多种飞行条件的真实世界数据集，以支持全景VI-SLAM的研究和评估。
+
+2. **是否属于 World Model**：  
+**结论**：否。  
+**理由**：虽然论文讨论了状态估计和环境建模，但其核心目标是通过全景视觉和惯性传感器实现位姿估计，而不是学习如何预测未来状态或进行计划。因此，它不属于World Model的范畴。
+
+3. **是否属于 VLA**：  
+**结论**：否。  
+**理由**：该论文的输入主要是全景图像和惯性测量数据，而输出是估计的位姿，并不包含自然语言或视觉与语言的交互。因此，它不符合VLA的定义。
+
+4. **是否属于 Humanoid Loco-manipulation**：  
+**结论**：否。  
+**理由**：尽管论文涉及到UAV的运动，但所讨论的任务并没有涉及到人形机器人(humanoid)的联合行走与操作(locomotion与manipulation)的协调控制。UAV的操控与人形机器人策略完全不同，因此不属于该类别。
+
+5. **最终标签总结**  
+该论文不属于World Model、VLA或Humanoid Loco-manipulation。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+最容易混淆的点在于论文中提到的“视觉”和“动作”，可能让人认为其与VLA相关。然而，在该文中所讨论的视觉输入是用于状态估计，而不是与语言的交互或机器人的直接动作决策。因此，核心任务与VLA的定义并不匹配。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   本论文提出了一种称为Coko-SLAM的紧凑关键帧优化的多代理高斯点云SLAM系统。其主要目标是在多代理协作映射中减少数据传输量，同时保持地图的保真度。通过在SLAM系统中引入一个压缩步骤来去除冗余的3D Gaussians，以及在没有初始猜想的情况下进行集中化的回路闭合计算，从而解决高带宽需求对系统实时性的影响。    2. 是否属于 World Model：否   ...">Compact Keyframe-Optimized Multi-Agent Gaussian Splatting SLAM</span></td>
+        <td class="author-cell">Monica M.Q. Li</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00804" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+本论文提出了一种称为Coko-SLAM的紧凑关键帧优化的多代理高斯点云SLAM系统。其主要目标是在多代理协作映射中减少数据传输量，同时保持地图的保真度。通过在SLAM系统中引入一个压缩步骤来去除冗余的3D Gaussians，以及在没有初始猜想的情况下进行集中化的回路闭合计算，从而解决高带宽需求对系统实时性的影响。  
+
+2. 是否属于 World Model：否  
+理由：虽然该论文涉及Simultaneous Localization and Mapping（SLAM），并且关注于环境中状态的估计，但主要的目标是优化和减少数据传输，而不是学习和预测环境状态的演化。其核心不在于对未来状态或观测的预测，而是提高实时性能与地图合成的有效性。  
+
+3. 是否属于 VLA：否  
+理由：论文没有提及输入包括视觉和语言的集成，而是专注于RGB-D（即包含彩色图像和深度信息的图像）数据进行地图构建。因此，模型的输入不符合VLA的标准。输出也只是关键帧的特征和高斯子图，并未涉及语言指令的处理或生成。  
+
+4. 是否属于 Humanoid Loco-manipulation：否  
+理由：该论文没有使用仿人机器人（humanoid）进行任务，而是讨论了多代理之间的协作SLAM，且任务不涉及类人机构的行走和操作联合控制。该研究主要集中在数据压缩与地图合成上，而非行为协调。  
+
+5. 最终标签总结  
+最终标签：无。  
+
+6. 如果有歧义，请说明最容易混淆的点  
+最容易混淆的点可能是该研究涉及SLAM的过程，这在一定程度上与World Model有关。但SLAM的侧重点在于即时定位和地图构建，而非对环境状态的预测演化，因此不属于World Model的范畴。此外，使用RGB-D数据进行地图构建以及增强多代理协作的能力可能会让人将其与VLA混淆，但本论文明确没有将视觉信息与语言结合。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   论文论述了设计和构建一种双动作用于手部康复的软机器人手套，主要用于帮助因神经系统疾病导致手部功能障碍的患者进行日常生活活动的恢复。重点涉及手指的独立控制和力量生成，以促进自然的抓握模式和增强康复效果。  2. 是否属于 World Model：否   理由：论文的重点在于实现手部康复功能，而非学习环境或世界的演化模型。虽然手套具备一定的控制能力，但没有描述建设一个能够预...">A Dual-Action Fabric-Based Soft Robotic Glove for Ergonomic Hand Rehabilitation</span></td>
+        <td class="author-cell">Rui Chen</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00768" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+论文论述了设计和构建一种双动作用于手部康复的软机器人手套，主要用于帮助因神经系统疾病导致手部功能障碍的患者进行日常生活活动的恢复。重点涉及手指的独立控制和力量生成，以促进自然的抓握模式和增强康复效果。
+
+2. 是否属于 World Model：否  
+理由：论文的重点在于实现手部康复功能，而非学习环境或世界的演化模型。虽然手套具备一定的控制能力，但没有描述建设一个能够预测未来状态或进行规划的世界模型。
+
+3. 是否属于 VLA：否  
+理由：该手套的功能没有涉及视觉和语言的联合输入，模型输入主要是关于手指的运动参数和动作控制，而非视觉信息和语言指令的融合。
+
+4. 是否属于 Humanoid Loco-manipulation：否  
+理由：尽管论文涉及手的操控和抓握动作，但它并不涉及全身协调的运动（locomotion），并且分析的对象是手部而非整体的人形机器人。手套的设计主要集中在手部的功能恢复，而不涵盖全身的协调控制。
+
+5. 最终标签总结  
+本论文不属于 World Model、VLA 或 Humanoid Loco-manipulation，主要关注于以手为中心的康复机器人手套设计和应用。
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能的混淆点在于该手套功能的控制和操作，人们可能误认为它涉及更多的机器人系统和复杂的运动控制。然而，实际论文中没有涉及整个人形机器人的移动或复杂的协调动作，而只专注于手的恢复。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括： 论文提出了一种可穿戴的触觉设备，用于虚拟现实环境中提供边缘和表面的触觉反馈。该设备通过双电机机制有效地传递不同的触觉信号，以提高用户在虚拟环境中的物体操作能力。  2. 是否属于 World Model：否。    - 理由：该论文并未涉及学习世界模型或预测未来状态，更专注于增强触觉反馈的技术实现，而非对环境进行建模和预测。  3. 是否属于 VLA：否。    - 理由...">A wearable haptic device for edge and surface simulation</span></td>
+        <td class="author-cell">Rui Chen</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00752" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：
+论文提出了一种可穿戴的触觉设备，用于虚拟现实环境中提供边缘和表面的触觉反馈。该设备通过双电机机制有效地传递不同的触觉信号，以提高用户在虚拟环境中的物体操作能力。
+
+2. 是否属于 World Model：否。
+   - 理由：该论文并未涉及学习世界模型或预测未来状态，更专注于增强触觉反馈的技术实现，而非对环境进行建模和预测。
+
+3. 是否属于 VLA：否。
+   - 理由：论文的模型输入没有包含视觉或语言信息，而是专注于通过触觉反馈来提升物体操作的精确度，故不符合VLA的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：否。
+   - 理由：虽然有提到物体操控，但论文主要针对触觉设备的设计及其在虚拟现实中增强表面和边缘操作的能力，并没有涉及类人机器人(如humanoid)的整体运动和操控任务，因此不符合该类的定义。
+
+5. 最终标签总结：
+不属于 World Model、VLA 或 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点：
+可能会混淆的是论文中涉及的物体操控任务，但其核心关注点在于提升触觉反馈，而非通过类人机器人进行联合的行走与操控，因此不符合Humanoid Loco-manipulation的标准。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   这篇论文介绍了一种新型的触觉感知模型TacViT，该模型基于视觉变换器（Vision Transformer），旨在提高多指机器人手在不同触觉传感器上的触觉感知能力。TacViT的主要目标是实现对新传感器的良好运作，无需重新训练模型，同时能够准确推断接触属性。  2. 是否属于 World Model：否   理由：虽然该论文涉及环境与机器人手的交互，但其主要关注点在于...">How to Train your Tactile Model: Tactile Perception with Multi-fingered Robot Hands</span></td>
+        <td class="author-cell">Christopher J. Ford</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00744" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Accepted for publication at the International Conference on Robotics and Automation (ICRA) 2026, Vienna</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+这篇论文介绍了一种新型的触觉感知模型TacViT，该模型基于视觉变换器（Vision Transformer），旨在提高多指机器人手在不同触觉传感器上的触觉感知能力。TacViT的主要目标是实现对新传感器的良好运作，无需重新训练模型，同时能够准确推断接触属性。
+
+2. 是否属于 World Model：否  
+理由：虽然该论文涉及环境与机器人手的交互，但其主要关注点在于触觉感知与特征提取，而不是学习世界状态的演化或未来状态的预测。因此，不符合World Model的定义。
+
+3. 是否属于 VLA：否  
+理由：该论文中没有提到视觉（图像）和语言的结合，主要是通过视觉传感器推断触觉信息，因此不符合VLA的标准。
+
+4. 是否属于 Humanoid Loco-manipulation：是  
+理由：文中提到的模型被应用于一个五指机器人手（humanoid robot hand），且涉及到触觉感知，这与操控（manipulation）任务相关，同时由于这种手的设计可以进行行走和操控任务，因此涉及到humanoid的整体协调控制。
+
+5. 最终标签总结  
+Humanoid Loco-manipulation
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能的混淆点在于机器人手的功能与控制方式，虽然文章关注于触觉感知，且未明确涉及到移动（locomotion），但由于该机器人手的平台是五指，且其涉及的操作一般与人形协调相关，因此归类为Humanoid Loco-manipulation。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   这篇论文介绍了一种名为SoftHand Model-W的3D打印人形类机器人手，其特点是集成了2自由度的腕关节，旨在提高机器人的灵活性和操控性能。通过实现手指的主动弯曲和腕关节的运动，该手被测试在两个对象操作任务上：立方体堆叠和盘面旋转，以验证手腕在执行这些操作时的有效性。  2. 是否属于 World Model：否   理由：该论文没有关于学习环境动态或预测未来状态...">SoftHand Model-W: A 3D-Printed, Anthropomorphic, Underactuated Robot Hand with Integrated Wrist and Carpal Tunnel</span></td>
+        <td class="author-cell">Dhillon B. Merritt</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00738" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Accepted for publication at the International Conference of Robotics and Automation (ICRA) 2026, Vienna</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+这篇论文介绍了一种名为SoftHand Model-W的3D打印人形类机器人手，其特点是集成了2自由度的腕关节，旨在提高机器人的灵活性和操控性能。通过实现手指的主动弯曲和腕关节的运动，该手被测试在两个对象操作任务上：立方体堆叠和盘面旋转，以验证手腕在执行这些操作时的有效性。
+
+2. 是否属于 World Model：否  
+理由：该论文没有关于学习环境动态或预测未来状态的信息。研究的重点在于设计和实现一个机械手，而不是学习和预测环境的演变。
+
+3. 是否属于 VLA：否  
+理由：虽然手部设计用于操作物体，但模型没有涉及视觉输入或语言输入，因此无法归类为视觉-语言-行动（VLA）模型。
+
+4. 是否属于 Humanoid Loco-manipulation：是  
+理由：平台是拟人化的robot（SoftHand Model-W与6轴机器人臂结合使用），并且涉及到手和腕关节的协调，以完成多种操控任务，同时实现了行走动态（locomotion）和操作（manipulation）的联合控制。
+
+5. 最终标签总结  
+Humanoid Loco-manipulation
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能的混淆点在于这篇论文确实讨论了涉及动作的任务，但它的重点是机械手的设计和实施，而不是利用模型进行环境预测或基于视觉-语言输入的决策。因此，虽然展示的是拟人化手，但并不符合世界模型或VLA的定义。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   这篇论文的核心任务是提出一种轻量级的全景分割方法（LiPS），旨在增强机器人在资源受限的平台上的感知能力。通过高效的query-based解码和简化的特征提取和融合路径，LiPS能够在保持准确性的同时显著降低计算需求。  2. 是否属于 World Model：结论 + 理由   不属于。理由是论文的主要内容聚焦于全景分割的模型设计与优化，而不是学习世界如何演化或预测未...">LiPS: Lightweight Panoptic Segmentation for Resource-Constrained Robotics</span></td>
+        <td class="author-cell">Calvin Galagain</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00634" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Submitted to IEEE ICIP 2026. Under review</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+这篇论文的核心任务是提出一种轻量级的全景分割方法（LiPS），旨在增强机器人在资源受限的平台上的感知能力。通过高效的query-based解码和简化的特征提取和融合路径，LiPS能够在保持准确性的同时显著降低计算需求。
+
+2. 是否属于 World Model：结论 + 理由  
+不属于。理由是论文的主要内容聚焦于全景分割的模型设计与优化，而不是学习世界如何演化或预测未来状态。虽然模型涉及对环境的像素级理解，但没有涉及计划或展开的概念。
+
+3. 是否属于 VLA：结论 + 理由  
+不属于。理由是虽然论文涉及视觉输入，但其模型和任务并没有结合语言信息，也没有输出与语言相关的操作。模型关注的是图像的分割处理，而不是将视觉和语言结合的任务。
+
+4. 是否属于 Humanoid Loco-manipulation：结论 + 理由  
+不属于。理由是论文讨论的对象是全景分割而非人形机器人在运动（locomotion）和操作（manipulation）上的联合控制。其工作重点是图像处理技术，而不是对人形机器人的运动或操作控制的研究。
+
+5. 最终标签总结  
+该论文不属于 World Model, VLA, 也不属于 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能容易混淆的点在于全景分割在机器人感知中的应用价值以及与机器人控制相关的潜在功能。但因其核心目的是增强视觉处理的效率，并不直接涉及动作决策或未来状态预测，因此不符合上述三种分类。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**      本论文介绍了StretchBot，一个结合多模态感知与混合神经符号推理的适应性助理机器人框架，旨在为用户提供动态调整的拉伸指导。通过实时感知用户状态和环境，StretchBot能够增强机器人指导的上下文相关性和适应性。  2. **是否属于 World Model**：否      **理由**：虽然StretchBot利用感知来适应用户，但其核心并不是学...">StretchBot: A Neuro-Symbolic Framework for Adaptive Guidance with Assistive Robots</span></td>
+        <td class="author-cell">Luca Vogelgesang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00628" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+   本论文介绍了StretchBot，一个结合多模态感知与混合神经符号推理的适应性助理机器人框架，旨在为用户提供动态调整的拉伸指导。通过实时感知用户状态和环境，StretchBot能够增强机器人指导的上下文相关性和适应性。
+
+2. **是否属于 World Model**：否  
+   **理由**：虽然StretchBot利用感知来适应用户，但其核心并不是学习和预测环境状态的演变，而是侧重于在整体结构下进行计划调整和动态反应。
+
+3. **是否属于 VLA**：是  
+   **理由**：该系统的输入包含用户的多模态感知数据（如视觉和环境反馈）和语言模型的推理，输出是通过适应性变化生成的动作，符合VLA的定义。
+
+4. **是否属于 Humanoid Loco-manipulation**：否  
+   **理由**：尽管StretchBot涉及运动指导，但其任务主要集中在拉伸活动并不涉及全身协调的行走和操控（loco-manipulation）。
+
+5. **最终标签总结**  
+   VLA
+
+6. **如果有歧义，请说明最容易混淆的点**  
+   论文提到的“拉伸指导”可能会让人联想到运动控制，但其实际重点是如何根据用户状态和环境动态调整指导，而不是针对人形机器人面临的复杂全身协调与操控任务。此外，尽管使用了混合神经符号框架，但并不意味着其为World Model，因为缺乏对世界状态演变的学习和预测。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括： 该论文提出了一种物理模仿学习（PIL）管道，以实现四足机器人在不同地形上更高效的能量消耗。通过将控制策略分解为主动部分（命令马达）和被动部分（通过并联弹性关节（PEJs）提供的运动），PIL使得机器人能够模仿动物的行走模式，从而在执行任务的同时减少能量消耗。  2. 是否属于 World Model：不属于。理由：虽然论文中提到预测未来状态的概念，但核心任务并不在于学习环...">A Physical Imitation Learning Pipeline for Energy-Efficient Quadruped Locomotion Assisted by Parallel Elastic Joint</span></td>
+        <td class="author-cell">Huyue Ma</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00611" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：
+该论文提出了一种物理模仿学习（PIL）管道，以实现四足机器人在不同地形上更高效的能量消耗。通过将控制策略分解为主动部分（命令马达）和被动部分（通过并联弹性关节（PEJs）提供的运动），PIL使得机器人能够模仿动物的行走模式，从而在执行任务的同时减少能量消耗。
+
+2. 是否属于 World Model：不属于。理由：虽然论文中提到预测未来状态的概念，但核心任务并不在于学习环境的演化模型或进行规划。相反，它专注于通过模仿生物体的运动模式来优化能量效率，关注的是动作的直接输出而非对未来状态的预测。
+
+3. 是否属于 VLA：不属于。理由：模型输入主要是关节位置、速度、基座姿态等状态信息，而非视觉和语言的组合输入。输出为机器人关节的目标位置，因此不符合VLA的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：不属于。理由：该研究涉及的是四足机器人（quadruped），而不是人形机器人（humanoid），因此不涉及humanoid locomotion和manipulation的联合控制。
+
+5. 最终标签总结：
+不属于 World Model、不属于 VLA、不属于 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点：
+易混淆的点在于论文中提到的“能量效率”和“控制策略优化”，这可能让人联想到动作计划和环境预测（World Model）。然而，实际任务的重点在于离线优化和直接控制，而不是基于预测的动作生成。此外，虽然包含对生物模仿的讨论，那并不直接涉及humanoid的robot。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**   这篇论文提出了一种利用多个摄像头视角增强数据效率的机器人模仿学习框架。通过在收集专家演示时扩展摄像头视角，论文旨在利用已有场景的视觉多样性，不再需要大量新的人类演示，从而提高训练数据的多样性和模型的泛化能力。  2. **是否属于 World Model：**   结论：不属于   理由：论文的目标主要集中在利用多视角提升数据多样性，而不是学习环境如何随动作演变...">Multi-Camera View Scaling for Data-Efficient Robot Imitation Learning</span></td>
+        <td class="author-cell">Yichen Xie</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00557" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+这篇论文提出了一种利用多个摄像头视角增强数据效率的机器人模仿学习框架。通过在收集专家演示时扩展摄像头视角，论文旨在利用已有场景的视觉多样性，不再需要大量新的人类演示，从而提高训练数据的多样性和模型的泛化能力。
+
+2. **是否属于 World Model：**  
+结论：不属于  
+理由：论文的目标主要集中在利用多视角提升数据多样性，而不是学习环境如何随动作演变。没有明确提及预测未来状态或进行计划。
+
+3. **是否属于 VLA：**  
+结论：不属于  
+理由：论文主要着眼于视觉摄像头数据的多样性提升，没有涉及到语言作为输入，模型输入主要是通过多视角捕获的图像，输出为机器人动作，但缺乏语言信息的结合。
+
+4. **是否属于 Humanoid Loco-manipulation：**  
+结论：不属于  
+理由：论文虽然涉及到机器人操作，但并未具体提及使用人形机器人（humanoid）进行行走和操作任务的联合控制，也未明确描述操作的是一台人形机器人。
+
+5. **最终标签总结**  
+该论文不属于 World Model、VLA 或 Humanoid Loco-manipulation。它提出了一种改进数据收集和训练数据多样性的方法，不符合上述任何定义。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+可能的混淆点在于论文中提到的“机器人模仿学习”涉及到机器人行为生成，容易让人误认为与 Humanoid Loco-manipulation 相关。然而，通过仔细分析任务和平台，明显发现其并不涉及人形机器人或同时控制行走和操作的任务。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：该论文研究如何在考虑加速度限制的情况下，跟踪由离线规划器生成的无碰撞路径。具体来说，它提出了一种路徑缩放方法，该方法通过基于可达性的分析来调整速度，以保证在规划的路径上实现动态可行的时间参数化，从而提高路径跟踪的可靠性。  2. 是否属于 World Model：不属于。理由：论文的核心关注点是如何调整速度以满足加速度限制，而不是学习和预测环境的未来状态或行为。它的重点在于...">Reachability-Aware Time Scaling for Path Tracking</span></td>
+        <td class="author-cell">Hossein Gholampour</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00439" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：该论文研究如何在考虑加速度限制的情况下，跟踪由离线规划器生成的无碰撞路径。具体来说，它提出了一种路徑缩放方法，该方法通过基于可达性的分析来调整速度，以保证在规划的路径上实现动态可行的时间参数化，从而提高路径跟踪的可靠性。
+
+2. 是否属于 World Model：不属于。理由：论文的核心关注点是如何调整速度以满足加速度限制，而不是学习和预测环境的未来状态或行为。它的重点在于对路径的跟踪控制，而非对环境模型的构建或推理。
+
+3. 是否属于 VLA：不属于。理由：论文中并未使用视觉信息和语言信息作为输入，模型的输入主要是几何路径信息和加速度约束。输出是调整后的路径跟踪命令，但不涉及视觉和语言的结合。
+
+4. 是否属于 Humanoid Loco-manipulation：不属于。理由：虽然引用了双积分器系统来跟踪路径，但论文未明确指出使用的是人形机器人，并且任务仅涉及运动跟踪而不涉及人形机器人的整体运动和操作协调。
+
+5. 最终标签总结：该论文不属于 World Model、VLA 和 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点：论文中提到的“跟踪控制”可能与机器人控制相关联，但由于主要关注的是路径跟踪而非具体的机器人动作生成，可能容易与涉及控制的理论研究混淆。总而言之，这篇论文侧重于路径跟踪的动态可及性分析，而非机器人控制的总体框架。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span>Certificate-Driven Closed-Loop Multi-Agent Path Finding with Inheritable Factorization</span></td>
+        <td class="author-cell">Jiarui Li</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00428" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>大模型总结失败<br><small style="color:#dc3545">⚠️ API 状态码异常：403，响应：{&quot;error&quot;:{&quot;message&quot;:&quot;免费API限制模型输入token小于4096，如有更多需求，请访问 https://api.chatanywhere.tech/#/shop 购买付费API。The number of prompt tokens for free accounts is limited to 4096. If you have additional requirements, please visit https://api.chatanywhere.tech/#/shop to purchase a premium key.(当前请求使用的ApiKey: sk-ZfY****Oh79)【如果您遇到问题，欢迎加入QQ群咨询：836739524】&quot;,&quot;type&quot;:&quot;chatanywhere_error&quot;,&quot;param&quot;:null,&quot;code&quot;:&quot;403 FORBIDDEN&quot;}}</small></small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   该论文提出了EgoNav系统，旨在通过学习人类行走数据来使类人机器人在多样的、未见过的环境中进行导航。系统使用条件扩散模型来预测基于过去轨迹的未来路径分布，并结合360°的视觉记忆来捕捉环境的颜色、深度和语义信息。最终目标是实现无需机器人数据或微调的类人机器人的自主导航。  2. 是否属于 World Model：是   结论：属于World Model。   理由：该...">Learning Humanoid Navigation from Human Data</span></td>
+        <td class="author-cell">Weizhuo Wang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00416" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+该论文提出了EgoNav系统，旨在通过学习人类行走数据来使类人机器人在多样的、未见过的环境中进行导航。系统使用条件扩散模型来预测基于过去轨迹的未来路径分布，并结合360°的视觉记忆来捕捉环境的颜色、深度和语义信息。最终目标是实现无需机器人数据或微调的类人机器人的自主导航。
+
+2. 是否属于 World Model：是  
+结论：属于World Model。  
+理由：该论文的核心是学习一个能够预测未来轨迹分布的模型，能够根据过去的轨迹生成多个可能的未来路径，符合World Model的定义，即学习世界如何随动作演化并进行预测。
+
+3. 是否属于 VLA：否  
+结论：不属于VLA。  
+理由：尽管模型使用了视觉输入，并且结合视觉信息进行轨迹预测，但并没有涉及语言输入。模型主要关注通过视觉信息推导出导航路径，而非通过视觉-语言的结合来直接生成动作。
+
+4. 是否属于 Humanoid Loco-manipulation：是  
+结论：属于Humanoid Loco-manipulation。  
+理由：该论文的机器人平台是类人机器人（Unitree G1），并且任务涉及到导航，表现出类人机器人的整体协调能力。在执行任务时，涉及到行走和避障，同时阐述了与环境的交互，这与locomotion和manipulation的联合控制密切相关。
+
+5. 最终标签总结  
+最终标签：World Model, Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+最容易混淆的点在于论文中提到的轨迹预测和学习人类行为，这可能让人联想到VLA领域，但由于缺乏语言输入，因此不符合VLA的标准。同时，虽然进行的是导航，但不涉及复杂的操控动作，仅通过行走表现出类人机器人在动态环境中的适应能力，从而最终归类于Humanoid Loco-manipulation。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span>Sampling-based Task and Kinodynamic Motion Planning under Semantic Uncertainty</span></td>
+        <td class="author-cell">Qi Heng Ho</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00401" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>大模型总结失败<br><small style="color:#dc3545">⚠️ API 状态码异常：403，响应：{&quot;error&quot;:{&quot;message&quot;:&quot;免费API限制模型输入token小于4096，如有更多需求，请访问 https://api.chatanywhere.tech/#/shop 购买付费API。The number of prompt tokens for free accounts is limited to 4096. If you have additional requirements, please visit https://api.chatanywhere.tech/#/shop to purchase a premium key.(当前请求使用的ApiKey: sk-ZfY****Oh79)【如果您遇到问题，欢迎加入QQ群咨询：836739524】&quot;,&quot;type&quot;:&quot;chatanywhere_error&quot;,&quot;param&quot;:null,&quot;code&quot;:&quot;403 FORBIDDEN&quot;}}</small></small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   本论文提出了一种名为“Behavioral Score Diffusion (BSD)”的模型无关轨迹规划方法，旨在通过内核加权估计从已收集的轨迹数据中直接计算扩散分数函数。该方法在每个去噪步骤中，通过检索与当前状态相关的多个轨迹并应用内核回归来估计去噪后的轨迹，旨在在复杂环境中实现有效的轨迹优化。  2. 是否属于 World Model：结论 + 理由   结论：是...">Behavioral Score Diffusion: Model-Free Trajectory Planning via Kernel-Based Score Estimation from Data</span></td>
+        <td class="author-cell">Shihao Li</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00391" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+本论文提出了一种名为“Behavioral Score Diffusion (BSD)”的模型无关轨迹规划方法，旨在通过内核加权估计从已收集的轨迹数据中直接计算扩散分数函数。该方法在每个去噪步骤中，通过检索与当前状态相关的多个轨迹并应用内核回归来估计去噪后的轨迹，旨在在复杂环境中实现有效的轨迹优化。
+
+2. 是否属于 World Model：结论 + 理由  
+结论：是  
+理由：文章的核心是利用前收集的轨迹数据进行模型无关的规划，通过扩散噪声调度控制内核带宽来处理非线性动态，同时在安全性方面采用了遮挡卷积的方法，这符合世界模型在学习环境动态和预测未来状态的定义。
+
+3. 是否属于 VLA：结论 + 理由  
+结论：否  
+理由：模型的输入主要是已收集的轨迹数据，而不是视觉和语言信息。虽然它涉及轨迹规划，但不包含从视觉和语言信息中解读指令并输出具体动作的过程。
+
+4. 是否属于 Humanoid Loco-manipulation：结论 + 理由  
+结论：否  
+理由：论文提到的四种机器人系统的复杂性较高，但并未明确说明使用的机器人平台是人形机器人，也没有涉及同时控制locomotion和manipulation的任务。
+
+5. 最终标签总结  
+最终标签：World Model
+
+6. 如果有歧义，请说明最容易混淆的点  
+本论文虽然未使用具体的动力学模型，但提到的轨迹优化和去噪方法可能让人误认为它属于行走和操作（Humanoid Loco-manipulation）任务。然而，由于没有明确的情境或任务需求，这仍然区分了与人形机器人相关的协调性需求。因此，其主要任务聚焦于对动态范围的建模，通过已有数据进行预测，使其主要归类于World Model。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：该论文提出了一种双流Transformer架构，旨在通过融合热红外（TIR）图像和深度图（LiDAR）实现对人的鲁棒追踪。通过使用预训练的热数据模型和差异学习率策略，该模型能够提升在恶劣天气条件下（如黑暗或强背光下）对目标的追踪能力，从而实现单一目标追踪（SOT）。  2. 是否属于 World Model：否。理由：该论文的核心任务是对特定物体的状态估计（即追踪），而不是...">A Dual-Stream Transformer Architecture for Illumination-Invariant TIR-LiDAR Person Tracking</span></td>
+        <td class="author-cell">Yuki Minase</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00363" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>technical report</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：该论文提出了一种双流Transformer架构，旨在通过融合热红外（TIR）图像和深度图（LiDAR）实现对人的鲁棒追踪。通过使用预训练的热数据模型和差异学习率策略，该模型能够提升在恶劣天气条件下（如黑暗或强背光下）对目标的追踪能力，从而实现单一目标追踪（SOT）。
+
+2. 是否属于 World Model：否。理由：该论文的核心任务是对特定物体的状态估计（即追踪），而不是学习环境如何随动作演化的模型。虽然涉及到对状态的预测，但并未表现出对未来状态的规划或推理能力。
+
+3. 是否属于 VLA：否。理由：论文的输入主要是热红外图像和LiDAR深度图，没有涉及到语言信息的输入。输出是对目标状态的预测（即目标位置），而不是直接从视觉语言中生成动作。
+
+4. 是否属于 Humanoid Loco-manipulation：否。理由：虽然论文涉及到跟随人的追踪任务，但是并没有明确表明它是基于仿人机器人平台，同时任务也不涉及对仿人机器人的全身运动和操控的联合控制。
+
+5. 最终标签总结：不属于 World Model、VLA 或 Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点：论文描述的目标追踪任务可能与某些仿人机器人的操作联系在一起，但并未提供完整的多模态动作输出。因此，最容易混淆的点在于任务的广泛应用可能会使人认为它涉及到更复杂的移动和操控任务，但实际上是专注于鲁棒的追踪模型构建。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：这篇论文提出了一种分层的运动规划和控制框架，该框架在未知非线性动力学下使自主运动规划成为可能。论文的核心在于通过学习系统特性，并在有限先验知识的条件下导航至目标。框架使用了多面体状态空间，并采用分段仿射模型来近似未知的非线性系统。高层规划通过图搜索进行，同时低层采用反馈控制器执行计划。为了提高计算效率，提出了一种非均匀自适应状态空间划分策略。  2. 是否属于 World ...">Hierarchical Motion Planning and Control under Unknown Nonlinear Dynamics via Predicted Reachability</span></td>
+        <td class="author-cell">Zhiquan Zhang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00320" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：这篇论文提出了一种分层的运动规划和控制框架，该框架在未知非线性动力学下使自主运动规划成为可能。论文的核心在于通过学习系统特性，并在有限先验知识的条件下导航至目标。框架使用了多面体状态空间，并采用分段仿射模型来近似未知的非线性系统。高层规划通过图搜索进行，同时低层采用反馈控制器执行计划。为了提高计算效率，提出了一种非均匀自适应状态空间划分策略。
+
+2. 是否属于 World Model：是。理由：论文关注的是在未知动态环境中学习和规划，即通过分层规划控制框架来预测未来状态并进行达成目标的控制。该框架涉及使用可预测的可达性条件进行规划，因此符合 World Model 的定义。
+
+3. 是否属于 VLA：否。理由：该论文主要关注运动规划与控制，而没有明确提及视觉和语言的结合。输入主要是动力学状态而非视觉或语言信息，输出也是针对运动规划的控制。
+
+4. 是否属于 Humanoid Loco-manipulation：否。理由：尽管论文提到了运动规划，但平台并未特指为 humanoid（类人型机器人），而且没有涉及整体协调的步态和操作任务。任务更倾向于在未知的动力学条件下进行导航和动作规划。
+
+5. 最终标签总结：World Model
+
+6. 如果有歧义，请说明最容易混淆的点：可能与 Humanoid Loco-manipulation 混淆，因为文章提到了运动规划和控制，可能引发人们对类人机器人的操作的联想。然而，文章的重点是动态系统的学习和规划，而非特定于 humanoid 机器人的联合动作和步态控制。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**      本文介绍了一种名为REMind的教育机器人介导角色扮演游戏，旨在支持儿童在反欺凌场景中的旁观者干预行为。该游戏通过社会机器人展现欺凌场景，并邀请儿童反思角色的视角，通过操控机器人头像的方式练习干预策略，帮助儿童建立同理心和自我效能感，以应对欺凌行为。  2. **是否属于 World Model**      **结论**：不属于      **理由**：...">Play-Testing REMind: Evaluating an Educational Robot-Mediated Role-Play Game</span></td>
+        <td class="author-cell">Elaheh Sanoubari</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00300" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>This work has been submitted to the IEEE for possible publication</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+   本文介绍了一种名为REMind的教育机器人介导角色扮演游戏，旨在支持儿童在反欺凌场景中的旁观者干预行为。该游戏通过社会机器人展现欺凌场景，并邀请儿童反思角色的视角，通过操控机器人头像的方式练习干预策略，帮助儿童建立同理心和自我效能感，以应对欺凌行为。
+
+2. **是否属于 World Model**  
+   **结论**：不属于  
+   **理由**：该论文并未关注建立环境的世界模型或通过动作预测未来状态，而主要是通过角色扮演来支持儿童的社会情感学习，强调的是情感和策略的演练，而非世界状态的预测和规划。
+
+3. **是否属于 VLA**  
+   **结论**：不属于  
+   **理由**：该模型的输入不包含视觉和语言信息的直接结合，尽管有角色和情景的描述，但没有明确的视觉和语言数据处理与决策动作输出的过程。主要是通过表现和反思来进行教育，而不是结合视觉和语言来生成动作。
+
+4. **是否属于 Humanoid Loco-manipulation**  
+   **结论**：不属于  
+   **理由**：虽然使用机器人作为表现工具，涉及到某种形式的操作，但任务的重点并不在于完整的人形机器人（humanoid）上进行运动和操控的联合过程，而是利用机器人作为工具进行教育活动，而不是进行复杂的身体协调控制。
+
+5. **最终标签总结**  
+   该论文不属于World Model、VLA或Humanoid Loco-manipulation。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+   可能的混淆点在于机器人作为社会化工具在游戏中的应用，可能会让人误以为涉及到高级的动作规划或情境理解，但实际上游戏的设计及目的更侧重于教育和情感认知，而非具体的物理行为控制或复杂的推理机制。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**      本文提出了DreamControl-v2，一个旨在增强自主 humanoid 机器人在复杂交互任务中的运动生成能力的框架。它通过在机器人运动空间中直接训练可指导的扩散模型，克服了之前方法在数据采集和运动生成时的局限性，从而实现更高效的机器人行为生成和自主环境交互能力。  2. **是否属于 World Model：**      **结论：是**     ...">DreamControl-v2: Simpler and Scalable Autonomous Humanoid Skills via Trainable Guided Diffusion Priors</span></td>
+        <td class="author-cell">Sudarshan Harithas</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00202" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+   本文提出了DreamControl-v2，一个旨在增强自主 humanoid 机器人在复杂交互任务中的运动生成能力的框架。它通过在机器人运动空间中直接训练可指导的扩散模型，克服了之前方法在数据采集和运动生成时的局限性，从而实现更高效的机器人行为生成和自主环境交互能力。
+
+2. **是否属于 World Model：**  
+   **结论：是**  
+   **理由：** 该研究关注于学习世界/环境如何随动作演变，采用扩散模型生成动态轨迹，提升了RL策略在复杂任务中的表现。通过生成和优化运动轨迹，以预测和规划未来状态来支持动作选择，符合 World Model 的特征。
+
+3. **是否属于 VLA：**  
+   **结论：是**  
+   **理由：** 文中提到生成模型可根据文本指令和空间时间约束生成运动轨迹，这表明模型输入包括视觉（空间信息）和语言（文本描述），而输出为机器人动作。因此符合 VLA 的定义。
+
+4. **是否属于 Humanoid Loco-manipulation：**  
+   **结论：是**  
+   **理由：** 该研究专注于 humanoid 机器人（如 Unitree-G1）的行动计划，任务涉及 locomotion 和 manipulation 的联合控制，且这一过程涉及全身协调。因此，显而易见其属于 Humanoid Loco-manipulation。
+
+5. **最终标签总结**  
+   标签总结：World Model, VLA, Humanoid Loco-manipulation
+
+6. **如果有歧义，请说明最容易混淆的点**  
+   最容易混淆的点可能是模型是否被视为仅限于生成动作而不涉及复杂情境下的状态预测与规划，因为其操作依赖于预测未来状态并作出相应动作。尽管直接生成动作但由于其关注于长时间跨度的任务，仍体现了对世界状态的理解与预测能力，使其与 World Model 紧密相关。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**      本论文提出了一种端到端的神经网络辅助方式，用于在海洋中进行自主平台的自我航向对齐。该方法通过神经网络架构来改进初始航向估计的准确性，并减少所需的对齐时间，尝试解决在低动态和噪声条件下常规模型方法所面临的挑战。  2. **是否属于 World Model**      结论：**否**      理由：本研究并未关注于学习环境如何随动作演化或进行未来状态预...">Neural-Assisted in-Motion Self-Heading Alignment</span></td>
+        <td class="author-cell">Zeev Yampolsky</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00168" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+   本论文提出了一种端到端的神经网络辅助方式，用于在海洋中进行自主平台的自我航向对齐。该方法通过神经网络架构来改进初始航向估计的准确性，并减少所需的对齐时间，尝试解决在低动态和噪声条件下常规模型方法所面临的挑战。
+
+2. **是否属于 World Model**  
+   结论：**否**  
+   理由：本研究并未关注于学习环境如何随动作演化或进行未来状态预测，而是专注于利用深度学习直接估计航向角，以改善模型基础方法在低信噪比环境下的表现。
+
+3. **是否属于 VLA**  
+   结论：**否**  
+   理由：虽然文中提到了使用传感器数据，但输入主要是惯性测量数据而非视觉和语言信息，而且输出也只是估计航向角而非直接产生机器人动作。
+
+4. **是否属于 Humanoid Loco-manipulation**  
+   结论：**否**  
+   理由：该研究应用于自主表面车辆，而非类人机器人。此外，任务并不涉及到类人机器人的全身协调控制，以及运行于运动和操作的联合任务。
+
+5. **最终标签总结**  
+   不属于 World Model，VLA，或 Humanoid Loco-manipulation。属于一种新的导航方法，基于深度学习进行的自我航向对齐。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+   本文研究的重点在于深度学习与导航对齐，而不是运动学或操作学。因此，尽管用到了一定的机器学习和数据驱动的方法，容易与“世界模型”混淆的点在于它们的应用背景和任务目标的不同。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**：本论文提出了一个层次化的导航控制框架，结合了混合整数线性规划（MILP）和模型预测控制（MPC），以确保在复杂的多面体障碍物环境中进行几何安全导航。该框架在高层生成长时域轨迹，在低层利用控制屏障函数（CBF）来增强安全性，从而实现对非凸环境的安全导航。  2. **是否属于 World Model**：否。虽然论文使用了预测模型并利用MPC进行长时域轨迹规划，但并未...">Long-Horizon Geometry-Aware Navigation among Polytopes via MILP-MPC and Minkowski-Based CBFs</span></td>
+        <td class="author-cell">Yi-Hsuan Chen</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00162" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**：本论文提出了一个层次化的导航控制框架，结合了混合整数线性规划（MILP）和模型预测控制（MPC），以确保在复杂的多面体障碍物环境中进行几何安全导航。该框架在高层生成长时域轨迹，在低层利用控制屏障函数（CBF）来增强安全性，从而实现对非凸环境的安全导航。
+
+2. **是否属于 World Model**：否。虽然论文使用了预测模型并利用MPC进行长时域轨迹规划，但并未明确学习世界的演化状态，也没有涉及对未来状态的预测进行规划，而是依赖MILP解决具体的导航问题。
+
+3. **是否属于 VLA**：否。论文中并未提及同时使用视觉和语言的信息。输入主要是与几何环境相关的规划数据，而输出是导航轨迹。
+
+4. **是否属于 Humanoid Loco-manipulation**：否。虽然任务涉及导航和避障，但并未结合人形机器人（humanoid），而且并输出涉及步态（locomotion）和操作（manipulation）相结合的控制。
+
+5. **最终标签总结**：该论文不属于World Model、VLA或Humanoid Loco-manipulation，因其主要针对复杂环境中的导航问题，没有涉及到以上几个领域的核心特征。
+
+6. **如果有歧义，请说明最容易混淆的点**：本论文中的模型预测控制（MPC）部分可能与World Model有一定的表面相似，因为MPC通常涉及对未来状态进行规划。然而，其核心目标是通过轨迹生成和控制屏障函数来实现安全导航，并未建立对环境状态或奖励进行预测，因此可以清楚地与World Model区分开来。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span>Advancing Multi-Robot Networks via MLLM-Driven Sensing, Communication, and Computation: A Comprehensive Survey</span></td>
+        <td class="author-cell">Hyun Jong Yang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00061" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>大模型总结失败<br><small style="color:#dc3545">⚠️ API 状态码异常：403，响应：{&quot;error&quot;:{&quot;message&quot;:&quot;免费API限制模型输入token小于4096，如有更多需求，请访问 https://api.chatanywhere.tech/#/shop 购买付费API。The number of prompt tokens for free accounts is limited to 4096. If you have additional requirements, please visit https://api.chatanywhere.tech/#/shop to purchase a premium key.(当前请求使用的ApiKey: sk-ZfY****Oh79)【如果您遇到问题，欢迎加入QQ群咨询：836739524】&quot;,&quot;type&quot;:&quot;chatanywhere_error&quot;,&quot;param&quot;:null,&quot;code&quot;:&quot;403 FORBIDDEN&quot;}}</small></small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**   该论文提出了一种混合现实（MR）接口MRReP，使用户能够在物理环境中通过手势直接绘制机器人导航路径（Hand-drawn Reference Path, HRP）。这一路径被集成到机器人导航系统中，通过定制的路径规划器将用户描绘的点序列转换为全局路径，从而实现自主导航。  2. **是否属于 World Model**   结论：否   理由：虽然论文讨论了路...">MRReP: Mixed Reality-based Hand-drawn Reference Path Editing Interface for Mobile Robot Navigation</span></td>
+        <td class="author-cell">Takumi Taki</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00059" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+该论文提出了一种混合现实（MR）接口MRReP，使用户能够在物理环境中通过手势直接绘制机器人导航路径（Hand-drawn Reference Path, HRP）。这一路径被集成到机器人导航系统中，通过定制的路径规划器将用户描绘的点序列转换为全局路径，从而实现自主导航。
+
+2. **是否属于 World Model**  
+结论：否  
+理由：虽然论文讨论了路径规划和用户意图的结合，但其主要焦点在于直接绘制路径并不在于学习环境状态如何随动作演化。并且并没有涉及到预测未来状态或奖励的机制。
+
+3. **是否属于 VLA**  
+结论：否  
+理由：该论文中虽然涉及用户通过手势输入指令，但没有使用视觉和语言的结合，输出仅为用户指定的路径而非通过解释视觉和语言输入生成的动作。
+
+4. **是否属于 Humanoid Loco-manipulation**  
+结论：否  
+理由：论文中的导航任务主要用于移动机器人，而不是人形机器人。此外，任务并未涉及联合控制的 locomotion 和 manipulation，主要集中在路径绘制和规划上。
+
+5. **最终标签总结**  
+该论文不属于 World Model、VLA 或 Humanoid Loco-manipulation，属于混合现实导航界面研究。
+
+6. **如果有歧义，请说明最容易混淆的点**  
+可能会与 World Model 演化学习相关，因为论文涉及路径规划和用户意图，但实际上它更侧重于路径的用户输入和转换，并未涉及环境动态的预测学习。同时，由于涉及手势输入，可能与 VLA 真正需要的视觉-语言结合产生混淆，但实际上该论文并没有满足 VLA 的定义。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. **论文核心任务概括**      本文探讨了如何通过强化学习（RL）优化预训练的机器人基础策略，以应对长时间任务中的表现退化问题。提出了一种名为VLLR的密集奖励框架，该框架结合了来自大型语言模型（LLM）和视觉-语言模型（VLM）的外部奖励，以及基于策略自信度的内部奖励。通过对任务进行层次化分解，VLLR实现了对长时间机器人任务的有效微调和优化。  2. **是否属于 World Mod...">Generalizable Dense Reward for Long-Horizon Robotic Tasks</span></td>
+        <td class="author-cell">Silong Yong</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00055" target="_blank" rel="noopener">📄 PDF</a><br><a class="resource-tag code" href="https://silongyong.github.io/vllr_project_page/" target="_blank" rel="noopener">🔗 Code1</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Project page:this https URL</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. **论文核心任务概括**  
+   本文探讨了如何通过强化学习（RL）优化预训练的机器人基础策略，以应对长时间任务中的表现退化问题。提出了一种名为VLLR的密集奖励框架，该框架结合了来自大型语言模型（LLM）和视觉-语言模型（VLM）的外部奖励，以及基于策略自信度的内部奖励。通过对任务进行层次化分解，VLLR实现了对长时间机器人任务的有效微调和优化。
+
+2. **是否属于 World Model：**  
+   **结论：否**  
+   **理由：** 虽然论文提到利用模仿学习和RL，但主体关注的是奖励框架的设计而非对环境动态的建模和预测。没有明显的对未来状态或观察的预测，这与“World Model”的定义不符。
+
+3. **是否属于 VLA：**  
+   **结论：是**  
+   **理由：** 输入包含来自视觉（通过VLM）和语言模型（LLM）处理的信息，输出则是机器人需要采取的动作。且该框架利用语言模型对任务进行分解和理解，因此符合VLA的定义。
+
+4. **是否属于 Humanoid Loco-manipulation：**  
+   **结论：是**  
+   **理由：** 该任务涉及移动操作和导航（mobile manipulation），并且明确提到通过机器人执行复杂任务。这些任务通常需要包括机器人身体协调（humanoid）在内的联合控制，符合Humanoid Loco-manipulation的要求。
+
+5. **最终标签总结**  
+   标签：VLA, Humanoid Loco-manipulation
+
+6. **如果有歧义，请说明最容易混淆的点**  
+   最容易混淆的点在于该论文涉及的任务框架和目标优化涉及到的层次和结构以及任务的复杂性。因此，它虽然不符合World Model的标准，但仍然与机器人实行复杂辅助能力的要求相符，结合了多种输入以完成高层次的任务，而不仅仅是操作动作。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   该论文提出了一种名为ProOOD的方法，旨在提高3D语义占用预测的准确性，同时增强对异常情况的检测能力。方法通过引入原型引导的语义补全和尾部分类挖掘策略，解决了模型在长尾类和超出分布（OOD）情况下的表现不足，同时提升了体素级的态势感知能力，为安全关键的自主驾驶提供支持。  2. 是否属于 World Model：否   理由：该研究并不侧重学习环境演化或未来状态的预测...">ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction</span></td>
+        <td class="author-cell">Yuheng Zhang</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.01081" target="_blank" rel="noopener">📄 PDF</a><br><a class="resource-tag code" href="https://github.com/7uHeng/ProOOD" target="_blank" rel="noopener">🔗 Code1</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Accepted to CVPR 2026. The source code is publicly available atthis https URL</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+该论文提出了一种名为ProOOD的方法，旨在提高3D语义占用预测的准确性，同时增强对异常情况的检测能力。方法通过引入原型引导的语义补全和尾部分类挖掘策略，解决了模型在长尾类和超出分布（OOD）情况下的表现不足，同时提升了体素级的态势感知能力，为安全关键的自主驾驶提供支持。
+
+2. 是否属于 World Model：否  
+理由：该研究并不侧重学习环境演化或未来状态的预测，而是集中于3D语义占用预测和异常检测，缺乏前述的状态预测和规划特征。
+
+3. 是否属于 VLA：否  
+理由：虽然文中涉及到语义信息的整合，但不存在视觉（图片或视频）和语言（文本）的输入，且输出是针对3D占用的预测结果，而不是直接控制机器人的动作。
+
+4. 是否属于 Humanoid Loco-manipulation：否  
+理由：该论文关注的是3D占用预测与OOD检测的问题，且未涉及类人机器人（humanoid）或相关的“移动与操控”联合控制任务。
+
+5. 最终标签总结  
+该论文不属于World Model、VLA或Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+可能容易混淆的是，文中提到了自主驾驶和环境理解的任务，似乎与机器人控制相关，但实际上并没有涉及到实时控制的具体操作或类人机器人的运动与操作协调，因此不满足Humanoid Loco-manipulation的标准。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括   该论文的核心任务是通过模型驱动的强化学习（RL）方法，针对高对比度成像（HCI）技术中的焦平面波前控制中存在的非共通路径扰动（NCPA）问题进行有效的控制策略优化，从而提高对系外行星的观测能力。  2. 是否属于 World Model：否   理由：虽然论文涉及波前控制和非共通路径扰动的预测，但其不仅关注环境的演化建模，而是具体针对NCPA问题进行信号控制策略优化，并...">Focal plane wavefront control with model-based reinforcement learning</span></td>
+        <td class="author-cell">Jalo Nousiainen</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00993" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>accepted by A&amp;A</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括  
+该论文的核心任务是通过模型驱动的强化学习（RL）方法，针对高对比度成像（HCI）技术中的焦平面波前控制中存在的非共通路径扰动（NCPA）问题进行有效的控制策略优化，从而提高对系外行星的观测能力。
+
+2. 是否属于 World Model：否  
+理由：虽然论文涉及波前控制和非共通路径扰动的预测，但其不仅关注环境的演化建模，而是具体针对NCPA问题进行信号控制策略优化，并未体现出对未来状态的全面预测或环境模拟。
+
+3. 是否属于 VLA：否  
+理由：该论文的输入主要是焦平面图像和控制信号的状态，未涉及视觉和语言的结合。尽管应用了机器学习，但其目标并不专注于从视觉和语言输入生成机器人动作，因此不符合VLA的定义。
+
+4. 是否属于 Humanoid Loco-manipulation：否  
+理由：该研究的机器人平台和相关任务并不涉及人形机器人的移动或操作。任务聚焦于光学系统中的波前控制，而不是与人形机器人相关的整体身体协调的运动和操作。
+
+5. 最终标签总结  
+该论文不属于World Model、VLA或Humanoid Loco-manipulation。
+
+6. 如果有歧义，请说明最容易混淆的点  
+最容易混淆的点可能在于论文提到强化学习和状态预测，这可能让人误以为该研究属于World Model。然而，强化学习的使用并不等同于模型的世界学习，主要是看其应用内容和上下文，在这里侧重于控制策略的问题，而不是环境演化的预测。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括： 该论文提出了一种名为 DVGT-2 的新的视觉几何动作(VGA)模式，旨在实现高效的在线自主驾驶。DVGT-2 处理输入的密集3D几何信息并同时输出几何重建和轨迹规划，强调在复杂环境中做出安全决策所需的精确空间控制。  2. 是否属于 World Model： 结论：否。理由：虽然该论文涉及到环境的几何重建和决策规划，但其核心任务不在于学习世界的演化或状态预测，而是关注如...">DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale</span></td>
+        <td class="author-cell">Sicheng Zuo</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00813" target="_blank" rel="noopener">📄 PDF</a><br><a class="resource-tag code" href="https://github.com/wzzheng/DVGT" target="_blank" rel="noopener">🔗 Code1</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Code is available at \href{this https URL}</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：
+该论文提出了一种名为 DVGT-2 的新的视觉几何动作(VGA)模式，旨在实现高效的在线自主驾驶。DVGT-2 处理输入的密集3D几何信息并同时输出几何重建和轨迹规划，强调在复杂环境中做出安全决策所需的精确空间控制。
+
+2. 是否属于 World Model：
+结论：否。理由：虽然该论文涉及到环境的几何重建和决策规划，但其核心任务不在于学习世界的演化或状态预测，而是关注如何通过密集3D几何信息直接支持动作的决策，因此不符合 World Model 的定义。
+
+3. 是否属于 VLA：
+结论：是。理由：论文明确提到模型面向视觉和语言输入，尽管主要强调几何信息，但提及使用自然语言描述来捕捉驾驶场景的整体理解，因此可以归类为 VLA 模型。在规划过程中，语言描述作为辅助任务存在。
+
+4. 是否属于 Humanoid Loco-manipulation：
+结论：否。理由：论文讨论的是自动驾驶场景中的车辆，而不是仿人类机器人（humanoid）在进行的整体运动和操作。此外，任务集中在车辆的轨迹规划，而未涉及人形机器人整体协调的动作。
+
+5. 最终标签总结：
+VLA
+
+6. 如果有歧义，请说明最容易混淆的点：
+VGA 模式和 VLA 模式的关系可能会引起混淆，因为两者均考虑了视觉输入以及如何决策。但关键区别在于 VGA 强调几何信息的关键性，并实现实时决策，而 VLA 则更侧重于视觉和语言的结合使用。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：    该论文研究了一种新型的机械结构，称为“ snapping four-bar nets”，由空间四杆联动机构构成，且具有双稳态特性。这些结构允许两种不同的配置，研究主要集中在通过几何方法构造这种结构，并在离散微分几何背景下讨论其存在性和特性。  2. 是否属于 World Model：否    - 理由：论文的重点是几何结构的构建及其存在性，而不是学习世界或环境如何随...">Bistable Quad-Nets Composed of Four-Bar Linkages</span></td>
+        <td class="author-cell">Gudrun Szewieczek</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00527" target="_blank" rel="noopener">📄 PDF</a></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：
+   该论文研究了一种新型的机械结构，称为“ snapping four-bar nets”，由空间四杆联动机构构成，且具有双稳态特性。这些结构允许两种不同的配置，研究主要集中在通过几何方法构造这种结构，并在离散微分几何背景下讨论其存在性和特性。
+
+2. 是否属于 World Model：否
+   - 理由：论文的重点是几何结构的构建及其存在性，而不是学习世界或环境如何随着动作演变的模型。没有涉及环境状态的预测或生成未来状态的计划。
+
+3. 是否属于 VLA：否
+   - 理由：模型的输入和输出与视觉、语言和动作结合无关，研究主要集中于机械构造和几何计算，而不是通过视觉和语言处理来生成动作指令。
+
+4. 是否属于 Humanoid Loco-manipulation：否
+   - 理由：论文讨论的是四杆联动和其几何性质，没有涉及人形机器人（humanoid）或联合控制的运动和操控（loco-manipulation）任务。
+
+5. 最终标签总结：该论文不属于 World Model、VLA 或 Humanoid Loco-manipulation 任何一类。
+
+6. 如果有歧义，请说明最容易混淆的点：
+   - 该论文涉及到了四杆机构和运动的研究，这在机械设计领域比较常见，可能与机器人领域的一些动作规划研究重叠，但其主要关注点是结构和几何性质，而不是智能行为或学习模型，因此不应与 World Model、VLA 或 Humanoid Loco-manipulation 混淆。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括    - 本文提出了一种新的广义矩阵逆，旨在保持与任意非奇异对角变换一致性，解决了长期存在的与状态空间变换相关的开放问题。新提出的逆补充了 Drazin 逆和 Moore-Penrose 逆，形成了一个涵盖标准线性系统变换的广义矩阵逆的三部曲，具有广泛的实际应用潜力。  2. 是否属于 World Model：否    - 理由：该文献聚焦于矩阵逆的数学性质和一致性问题，而...">A Generalized Matrix Inverse that is Consistent with Respect to Diagonal Transformations</span></td>
+        <td class="author-cell">Jeffrey Uhlmann</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00049" target="_blank" rel="noopener">📄 PDF</a><br><a class="resource-tag code" href="https://arxiv.org/abs/1604.08476" target="_blank" rel="noopener">🔗 Code1</a><br><details class="resource-comment"><summary>📝 备注</summary><small>This reflects the 2018 SIMAX publication. (The1604.08476preprint has a comment saying that its content is contained in the SIMAX paper, but the two are quite distinct.)</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括
+   - 本文提出了一种新的广义矩阵逆，旨在保持与任意非奇异对角变换一致性，解决了长期存在的与状态空间变换相关的开放问题。新提出的逆补充了 Drazin 逆和 Moore-Penrose 逆，形成了一个涵盖标准线性系统变换的广义矩阵逆的三部曲，具有广泛的实际应用潜力。
+
+2. 是否属于 World Model：否
+   - 理由：该文献聚焦于矩阵逆的数学性质和一致性问题，而不是通过学习或预测环境状态的模型。没有明显的学习世界状态或推断未来状态的任务。
+
+3. 是否属于 VLA：否
+   - 理由：文中没有涉及视觉或语言输入，也不涉及基于视觉和语言来产生机器人动作的任务。
+
+4. 是否属于 Humanoid Loco-manipulation：否
+   - 理由：虽然提到该逆的应用可能与机器人有关，但没有涉及关于人形机器人（humanoid）的移动（locomotion）和操作（manipulation）任务的具体内容或实例。
+
+5. 最终标签总结
+   - 该论文不适合任何一个给定的标签类别（World Model, VLA, 或 Humanoid Loco-manipulation）。
+
+6. 如果有歧义，请说明最容易混淆的点
+   - 可能会因为该文涉及的“机器人”和“控制系统”关键词而引起混淆，但这并未涉及具体的机器人学习或行为生成，从而可以明确其与上述三类任务的不同。</small></details></td>
+    </tr>
+<tr>
+        <td class="title-cell"><span class="title-with-tooltip" title="1. 论文核心任务概括：本文描述了一门硕士课程，旨在教授学生如何在受限的计算平台上实现完整的机器人技术流程，包括动态学、状态估计、控制和规划。学生使用非线性算法使四旋翼机器人（multirotor）实时飞行，并避免使用黑箱软件基础设施。  2. 是否属于 World Model：否。理由：论文聚焦于教育和算法实现，而非学习环境和状态的演化。它没有提到对未来状态或观察的预测，目标是实现实时操作而非进...">Rusty Flying Robots: Learning a Full Robotics Stack with Real-Time Operation on an STM32 Microcontroller in a 9 ECTS MS Course</span></td>
+        <td class="author-cell">Wolfgang Hoenig</td>
+        <td class="resource-cell"><a class="resource-tag pdf" href="https://arxiv.org/pdf/2604.00032" target="_blank" rel="noopener">📄 PDF</a><br><details class="resource-comment"><summary>📝 备注</summary><small>Accepted at the International Conference on Robotics in Education (RiE), 2026</small></details></td>
+        <td class="score-cell" style="text-align:center"><span class="stars">-</span></td>
+        <td class="summary-cell"><details class="summary-details" title="点击查看详情"><summary>📋</summary><small>1. 论文核心任务概括：本文描述了一门硕士课程，旨在教授学生如何在受限的计算平台上实现完整的机器人技术流程，包括动态学、状态估计、控制和规划。学生使用非线性算法使四旋翼机器人（multirotor）实时飞行，并避免使用黑箱软件基础设施。
+
+2. 是否属于 World Model：否。理由：论文聚焦于教育和算法实现，而非学习环境和状态的演化。它没有提到对未来状态或观察的预测，目标是实现实时操作而非进行规划。
+
+3. 是否属于 VLA：否。理由：虽然涉及机器人控制，但没有提及视觉或语言输入。输入主要是算法和动态学，而输出是机器人的实时动作，不涉及视觉或语言理解。
+
+4. 是否属于 Humanoid Loco-manipulation：否。理由：论文中的任务主要是控制四旋翼飞机，而不是人形机器人（humanoid），而且没有涉及步态（locomotion）和操作（manipulation）的联合控制。
+
+5. 最终标签总结：不属于上述任何类别。
+
+6. 如果有歧义，请说明最容易混淆的点：可能会与Humanoid Loco-manipulation有所混淆，原因是论文涉及机器人控制任务，但由于主要聚焦于四旋翼而非人形机器人，使其不符合相关标准。</small></details></td>
+    </tr>
+        </tbody></table>
+    </div>
+</div>
+<div class="date-section" id="date-20260401">
+    <div class="date-header">
+        <span>2026-04-01（44篇论文）</span>
+        <span class="arrow">▶</span>
+    </div>
+    <div class="date-content" style="display: none;">
         <table>
         <thead>
             <tr>
@@ -5110,7 +5955,7 @@ LaMP是一个双专家的视觉-语言-动作(VLA)框架，旨在通过将密集
             });
             
             // ========== 自动展开最新日期 ==========
-            const latestId = 'date-20260401';
+            const latestId = 'date-20260402';
             if (latestId) {
                 const latestSection = document.getElementById(latestId);
                 if (latestSection) {
