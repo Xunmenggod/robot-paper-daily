@@ -1,16 +1,23 @@
-# arXiv Robot 领域论文汇总（共254篇）
+# arXiv Robot 领域论文汇总（共253篇）
 
 > 说明：仅显示最近五天数据，当天论文默认展开，其他日期点击标题可展开/折叠
 > 相关性评分：基于LLM对机器人领域的相关性评定（1-5分，★越多相关性越高）
 
 ## 日期导航
+- [2026-06-27（1篇论文）](#date-20260627)
 - [2026-06-26（56篇论文）](#date-20260626)
 - [2026-06-25（67篇论文）](#date-20260625)
 - [2026-06-24（38篇论文）](#date-20260624)
 - [2026-06-23（91篇论文）](#date-20260623)
-- [2026-06-22（2篇论文）](#date-20260622)
 
-## <a id='date-20260626'></a>2026-06-26（56篇论文）
+## <a id='date-20260627'></a>2026-06-27（1篇论文）
+
+| Title | Author | Comment | PDF | Code | Relevance | Summary |
+|----------|----|---|---|---|---|----------|
+| Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline) | Ilia Larchenko | <details><summary>detail</summary>Solution of the LeHome Challenge at ICRA 2026</details> | [PDF](https://arxiv.org/pdf/2606.27163) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+
+<details>
+<summary><a id='date-20260626'></a>2026-06-26（56篇论文）</summary>
 
 | Title | Author | Comment | PDF | Code | Relevance | Summary |
 |----------|----|---|---|---|---|----------|
@@ -70,6 +77,8 @@
 | PRISM: Efficient and Locally Optimal Probabilistic Planning with Reachability Guarantees | Alex Rose |  | [PDF](https://arxiv.org/pdf/2606.26413) | - | - | <details><summary>总结</summary>1. 论文核心任务概括  <br>该论文提出了一种名为PRISM的算法，旨在解决在运动不确定性和状态及控制约束下的信念空间规划问题。PRISM通过构建一个图形化的信念空间路线图，确保在给定的约束条件下实现高覆盖率和低成本的路径规划。该算法通过分解信念空间规划问题为确定性均值规划和协方差收缩问题，并结合在线局部优化方法来提高路径的可行性和效率。<br><br>2. 是否属于 World Model：否  <br>理由：虽然PRISM涉及到信念空间的规划和对未来状态的预测，但其核心目标是构建一个可行的路径规划算法，而不是专注于学习环境的演化模型。PRISM并不直接预测未来状态，而是通过图形化的路线图来实现路径规划。<br><br>3. 是否属于 VLA：否  <br>理由：该论文的输入主要是信念空间中的高斯分布（均值和协方差），而不是视觉和语言的组合。输出是路径规划的结果，而不是直接的机器人动作。因此，PRISM不符合VLA的定义。<br><br>4. 是否属于 Humanoid Loco-manipulation：否  <br>理由：论文没有提到任何具体的机器人平台，尤其是没有涉及到人形机器人（humanoid）及其联合控制的运动和操作任务。PRISM的任务主要集中在信念空间的路径规划，而不是在执行具体的运动和操作任务。<br><br>5. 最终标签总结  <br>该论文不属于World Model、VLA或Humanoid Loco-manipulation。它主要集中在信念空间的路径规划算法上。<br><br>6. 如果有歧义，请说明最容易混淆的点  <br>最容易混淆的点可能是PRISM在信念空间中进行的路径规划与World Model的关系。尽管PRISM涉及到对未来状态的规划，但其方法论和目标与World Model的核心思想（学习环境演化）并不一致。PRISM更侧重于实现高效的路径规划，而不是学习或建模环境。</details> |
 | Charting the Growth of Social-Physical HRI (spHRI): A Systematic Review Pipeline Augmented by Small Language Models | Mayumi Mohan | <details><summary>detail</summary>Companion Proceedings of the 21st ACM/IEEE International Conference on Human-Robot Interaction</details> | [PDF](https://arxiv.org/pdf/2606.26382) | - | - | <details><summary>总结</summary>1. 论文核心任务概括  <br>该论文探讨了社会物理人机交互（spHRI）领域的快速发展，并评估小型语言模型（SLMs）在系统性文献回顾中的辅助作用，特别是在标题和摘要筛选阶段。研究旨在通过使用SLMs来提高文献筛选的效率和准确性，帮助人类审稿人识别被遗漏的相关论文。<br><br>2. 是否属于 World Model：否  <br>理由：该论文并不涉及学习环境的演化或预测未来状态，而是关注于文献筛选和分类的过程，没有涉及到环境建模或规划的内容。<br><br>3. 是否属于 VLA：否  <br>理由：虽然论文提到使用语言模型，但其输入主要是文献的标题和摘要，而不是视觉和语言的结合。输出是对文献的相关性判断，而不是机器人动作。<br><br>4. 是否属于 Humanoid Loco-manipulation：否  <br>理由：该研究不涉及任何机器人平台的控制，尤其是没有涉及人形机器人（humanoid）在运动和操作方面的联合控制任务。<br><br>5. 最终标签总结  <br>该论文不属于 World Model、VLA 或 Humanoid Loco-manipulation。<br><br>6. 如果有歧义，请说明最容易混淆的点  <br>最容易混淆的点可能是论文提到的“人机交互”与“机器人”之间的关系。虽然涉及机器人，但研究的重点在于文献筛选和语言模型的应用，而不是机器人在物理环境中的操作或行为。</details> |
 | Fast LeWorldModel | Yuntian Gao |  | [PDF](https://arxiv.org/pdf/2606.26217) | - | - | <details><summary>总结</summary>1. 论文核心任务概括  <br>该论文提出了一种快速的潜在世界模型（Fast-LeWorldModel），旨在通过动作前缀预测来改进世界模型的动态建模。与传统的逐步状态转移方法相比，Fast-LeWM能够并行预测在执行动作前缀后达到的潜在状态，从而减少了预测误差的累积并加快了规划过程。<br><br>2. 是否属于 World Model：是  <br>理由：论文的核心在于学习世界的动态，即如何通过动作影响未来状态的演变。Fast-LeWM通过动作前缀预测来建模状态的演变，符合World Model的定义，尤其是在规划和预测未来状态方面。<br><br>3. 是否属于 VLA：否  <br>理由：论文中没有提及视觉和语言的输入，主要聚焦于潜在状态的预测和动作序列的评估，因此不符合VLA的标准。<br><br>4. 是否属于 Humanoid Loco-manipulation：否  <br>理由：论文没有提到任何关于人形机器人（humanoid）或其在运动和操作方面的联合控制的任务，主要集中在潜在世界模型的构建和规划上。<br><br>5. 最终标签总结  <br>该论文属于 World Model。<br><br>6. 如果有歧义，请说明最容易混淆的点  <br>最容易混淆的点可能是论文中提到的“规划”与“动作输出”的关系。虽然涉及到规划，但并没有直接涉及到具体的机器人控制或动作执行，因此不能归类为Humanoid Loco-manipulation。</details> |
+
+</details>
 
 <details>
 <summary><a id='date-20260625'></a>2026-06-25（67篇论文）</summary>
@@ -288,15 +297,5 @@
 | Robot Critics that Sweat the Small Stuff | Sruthi Sudhakar |  | [PDF](https://arxiv.org/pdf/2606.21572) | - | - | <details><summary>总结</summary>1. 论文核心任务概括：<br>   这篇论文提出了一种框架来微调视觉-语言模型（VLMs），使其能够在机器人操作中作为“评论员”进行细粒度的进展/失败判别，从而改善机器人策略的性能。通过生成配对的成功与失败回滚，我们能够为VLMs构建一个精细的进展比较数据集，进而将其集成到机器人策略中，以在测试时通过政策引导提高表现。<br><br>2. 是否属于 World Model：<br>   结论：是。理由：论文中提到使用一个生成的视频模型来预测不同候选动作的视觉效果，并且对这些候选行动进行评估以决定成功与失败，这表明模型在学习世界状态的演变，并在推理时考虑到未来状态（即视频中视觉状态的预测），符合World Model的定义。<br><br>3. 是否属于 VLA：<br>   结论：是。理由：模型的输入涉及视觉信息和语言信息（通过VLMs），而输出则是机器人在政策中选择的动作。这符合VLA的输入输出特征，即包含视觉和语言的结合。<br><br>4. 是否属于 Humanoid Loco-manipulation：<br>   结论：不确定，需要更多信息。理由：尽管论文提到了机器人操作任务的进展，但没有明确说明所使用的机器人平台是否为人形机器人或任务是否涉及人形机器人的整体协调，包括步态（locomotion）和操控（manipulation）的联合控制。因此，缺少关键信息来明确分类为Humanoid Loco-manipulation。<br><br>5. 最终标签总结：<br>   - World Model: 是<br>   - VLA: 是<br>   - Humanoid Loco-manipulation: 不确定<br><br>6. 如果有歧义，请说明最容易混淆的点：<br>   最容易混淆的点在于对“Humanoid Loco-manipulation”的特定性要求。虽然提到“机器人操作”，但未明确指明是否采用了人形机器人以进行步态和操控的整合控制，进一步的信息是必需的。</details> |
 | A Stitch in Time Saves Nine: Preserving Policy Compatibility Under Perception Updates in End-to-End Autonomous Driving | Yueyuan Li | <details><summary>detail</summary>5 figures; T-ITS under review</details> | [PDF](https://arxiv.org/pdf/2606.21509) | - | - | <details><summary>总结</summary>1. **论文核心任务概括**  <br>该论文的核心任务是探讨在端到端自主驾驶系统中，通过轻量级的潜在空间对齐方法（模型缝合）来维护感知更新后固定决策政策的兼容性。研究显示，通过模型缝合可以有效恢复在感知模块更新后的驾驶行为。<br><br>2. **是否属于 World Model**：**否**  <br>理由：虽然论文涉及更新感知模型和决策策略，但其核心在于维护政策与感知之间的兼容性，而不是预测环境的演化。没有专注于学习世界模型或进行未来状态的预测与规划。<br><br>3. **是否属于 VLA**：**否**  <br>理由：模型输入主要包括感知模块产生的潜在表示，而不是视觉和语言的结合。输出是决策行为而非动作，因此不符合视觉-语言-动作的定义。<br><br>4. **是否属于 Humanoid Loco-manipulation**：**否**  <br>理由：论文的研究对象是端到端自主驾驶系统，这并不涉及人形机器人（humanoid）以及与之相关的行走（locomotion）和操作（manipulation）的联合控制。<br><br>5. **最终标签总结**  <br>论文不属于 World Model、VLA 或 Humanoid Loco-manipulation，主要聚焦于降低感知模块更新对固定政策的影响。<br><br>6. **如果有歧义，请说明最容易混淆的点**  <br>可能的混淆点在于，论文提到的潜在空间对齐和预测驾驶行为的方式可能给人误解，似乎与 World Model 的预测功能相关。但实际论文的重点在于政策的兼容性维护，而不是环境预测或规划。</details> |
 | UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling | Tao Xu |  | [PDF](https://arxiv.org/pdf/2606.21501) | - | - | <details><summary>总结</summary>1. 论文核心任务概括：<br>论文提出了一种名为UniviewVLA的统一多视角视觉-语言-动作模型，旨在通过仅使用标准的双摄像头观察，推断多视角场景的演变，以改善机器人在被遮挡任务中的动作预测性能。该模型结合了世界建模的能力，能够预测未来场景状态，从而在不需要额外硬件或显式3D重建的情况下，提高机器人操作的准确性。<br><br>2. 是否属于 World Model：是。理由：该模型通过学习如何从标准观察预测未来多视角场景演变，从而能够生成未来状态和视图信息，以改善动作预测，显然符合World Model的定义。<br><br>3. 是否属于 VLA：是。理由：模型输入包括视觉和语言信息，输出是机器人动作，符合视觉-语言-动作模型的特征。<br><br>4. 是否属于 Humanoid Loco-manipulation：否。理由：尽管论文涉及操控任务，但并未明确提及使用类人机器人进行整体协调控制，且训练内容并未强调locomotion（行走）方面的联合控制。<br><br>5. 最终标签总结：<br>- World Model: 是<br>- VLA: 是<br>- Humanoid Loco-manipulation: 否<br><br>6. 如果有歧义，请说明最容易混淆的点：<br>最容易混淆的点在于论文涉及到的动作预测和机器人操控，这可能让人联想到Humanoid Loco-manipulation的特性。但由于该模型的机器人平台和所提及的任务未明确表明是针对类人机器人的综合协调操控，因此它不符合该类别的严格定义。</details> |
-
-</details>
-
-<details>
-<summary><a id='date-20260622'></a>2026-06-22（2篇论文）</summary>
-
-| Title | Author | Comment | PDF | Code | Relevance | Summary |
-|----------|----|---|---|---|---|----------|
-| Co-policy: Responsive Human-Robot Co-Creation for Musical Performances | Xuetao Li |  | [PDF](https://arxiv.org/pdf/2606.19914) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups | Przemyslaw Musialski | <details><summary>detail</summary>preprint</details> | [PDF](https://arxiv.org/pdf/2606.20547) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
 
 </details>
