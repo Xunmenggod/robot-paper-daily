@@ -1,16 +1,27 @@
-# arXiv Robot 领域论文汇总（共228篇）
+# arXiv Robot 领域论文汇总（共231篇）
 
 > 说明：仅显示最近五天数据，当天论文默认展开，其他日期点击标题可展开/折叠
 > 相关性评分：基于LLM对机器人领域的相关性评定（1-5分，★越多相关性越高）
 
 ## 日期导航
+- [2026-07-11（5篇论文）](#date-20260711)
 - [2026-07-10（38篇论文）](#date-20260710)
 - [2026-07-09（44篇论文）](#date-20260709)
 - [2026-07-08（47篇论文）](#date-20260708)
 - [2026-07-07（97篇论文）](#date-20260707)
-- [2026-07-06（2篇论文）](#date-20260706)
 
-## <a id='date-20260710'></a>2026-07-10（38篇论文）
+## <a id='date-20260711'></a>2026-07-11（5篇论文）
+
+| Title | Author | Comment | PDF | Code | Relevance | Summary |
+|----------|----|---|---|---|---|----------|
+| Native Video-Action Pretraining for Generalizable Robot Control | Qihang Zhang |  | [PDF](https://arxiv.org/pdf/2607.08639) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| A New Human-Likeness and Comfort Index for Robot Movements Along Prescribed Paths | Rosanna Coccaro | <details><summary>detail</summary>accepted for IEEE Transactions on Cybernetics</details> | [PDF](https://arxiv.org/pdf/2607.08620) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| In vivo feasibility study of humanoid robots in surgery | Zekai Liang |  | [PDF](https://arxiv.org/pdf/2607.07972) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| APIVOT: Adaptive Planning with Interleaved Vision-Language Thoughts | Emily Jin | <details><summary>detail</summary>Project Page:this https URL</details> | [PDF](https://arxiv.org/pdf/2607.08024) | [code1](https://emilyzjin.github.io/projects/apivot.html) | - | <details><summary>总结</summary>1. 论文核心任务概括  <br>APIVOT是一个基于视觉-语言模型（VLM）的规划器，旨在通过交替使用语言和视觉思维进行长时间的机器人规划。该模型需要处理语义任务结构和几何可行性，能够分解目标、选择相关对象并规划动作序列，同时确保计划满足空间约束。<br><br>2. 是否属于 World Model：否  <br>理由：虽然APIVOT涉及到对未来状态的想象和几何可行性的验证，但其主要目标是生成动作序列而非学习世界的演化模型。它并不专注于预测未来状态或奖励，而是将视觉和语言结合用于规划。<br><br>3. 是否属于 VLA：是  <br>理由：APIVOT的输入包含视觉信息（图像观察）和语言信息（任务指令），输出是机器人执行的动作序列。模型通过语言进行语义推理，同时利用视觉思维进行几何推理，符合VLA的定义。<br><br>4. 是否属于 Humanoid Loco-manipulation：否  <br>理由：虽然APIVOT涉及到机器人规划，但没有明确指出使用的是人形机器人（humanoid）平台，也没有描述任务涉及到人形机器人的整体协调控制（locomotion和manipulation的联合控制）。任务主要集中在长时间的规划，而非具体的动作执行。<br><br>5. 最终标签总结  <br>APIVOT属于 VLA。<br><br>6. 如果有歧义，请说明最容易混淆的点  <br>最容易混淆的点在于APIVOT涉及到对几何可行性的验证，这可能让人联想到World Model的特征。然而，APIVOT的核心任务是生成动作序列而非学习环境的演化，因此更符合VLA的定义。</details> |
+| Idiobionics: The Unification of Privacy and Intelligent Robotic Prostheses | Kwesi Afari Darfoor |  | [PDF](https://arxiv.org/pdf/2607.07775) | - | - | <details><summary>总结</summary>1. 论文核心任务概括  <br>这篇论文探讨了智能假肢（bionic limbs）在隐私和安全方面的挑战，提出了一个新的研究领域“idiobionics”，旨在研究如何在增强假肢适应性的同时保护用户隐私。论文讨论了假肢的感知与控制系统，强调了其在日常生活活动中的应用，以及这些技术进步可能带来的隐私风险。<br><br>2. 是否属于 World Model：否  <br>理由：论文并未聚焦于学习环境的演化或预测未来状态，而是讨论了假肢的感知与控制系统，以及隐私风险的研究。因此，缺乏对世界模型的核心特征的关注。<br><br>3. 是否属于 VLA：否  <br>理由：尽管论文提到了感知系统和用户的运动意图，但没有明确涉及视觉和语言的输入输出关系。主要关注的是假肢的控制和隐私问题，而非视觉-语言-动作的整合。<br><br>4. 是否属于 Humanoid Loco-manipulation：是  <br>理由：论文讨论的假肢（bionic limbs）涉及到人类的运动（locomotion）和物体抓取（manipulation），且假肢的设计需要协调全身动作（whole-body coordination），符合人形机器人运动和操作的联合控制特征。<br><br>5. 最终标签总结  <br>Humanoid Loco-manipulation<br><br>6. 如果有歧义，请说明最容易混淆的点  <br>最容易混淆的点在于论文提到的假肢的智能控制和适应性，这可能让人联想到与世界模型相关的学习和预测。然而，论文的核心并不在于环境的演化或未来状态的预测，而是集中在假肢的隐私问题和适应性控制上。</details> |
+
+<details>
+<summary><a id='date-20260710'></a>2026-07-10（38篇论文）</summary>
 
 | Title | Author | Comment | PDF | Code | Relevance | Summary |
 |----------|----|---|---|---|---|----------|
@@ -52,6 +63,8 @@
 | Post-Training in End-to-End Autonomous Driving | Ruining Yang |  | [PDF](https://arxiv.org/pdf/2607.08072) | - | - | <details><summary>总结</summary>1. 论文核心任务概括：<br>   本文综述了端到端自主驾驶的后训练技术，探讨了在安全-critical 和交互-intense 环境中，如何通过改进的后训练方法来提升驾驶政策的可靠性与效率。文中定义了后训练作为一个独特的阶段，并基于监督形式对现有文献进行了分类，以便系统化理解和促进未来研究。<br><br>2. 是否属于 World Model：<br>   结论：否。理由：文中提到的模型虽然涉及到预测未来轨迹，但主要侧重于端到端直接从多模态输入映射到未来轨迹，没有强调环境模型的学习和世界状态的演变。<br><br>3. 是否属于 VLA：<br>   结论：是。理由：文章讨论的模型涉及多模态输入（如相机图像和高层导航指令），并依赖视觉-语言-动作（VLA）模型，直接输出机器人动作，符合VLA的定义。<br><br>4. 是否属于 Humanoid Loco-manipulation：<br>   结论：否。理由：文中提及的主要是自主驾驶的决策与轨迹生成，未涉及类人机器人（humanoid）或操作与移动的联合控制任务。<br><br>5. 最终标签总结：<br>   该论文主要属于 VLA。 <br><br>6. 如果有歧义，请说明最容易混淆的点：<br>   可能会混淆的点在于轨迹预测的内容。尽管文中提到的某些方法可能涉及状态的预测，但重点并不在构建一个完整的世界模型，而在于从多模态输入到动作的学习，因此更加偏向 VLA 而非 World Model。</details> |
 | APIVOT: Adaptive Planning with Interleaved Vision-Language Thoughts | Emily Jin | <details><summary>detail</summary>Project Page:this https URL</details> | [PDF](https://arxiv.org/pdf/2607.08024) | [code1](https://emilyzjin.github.io/projects/apivot.html) | - | <details><summary>总结</summary>大模型总结失败</details> |
 | Idiobionics: The Unification of Privacy and Intelligent Robotic Prostheses | Kwesi Afari Darfoor |  | [PDF](https://arxiv.org/pdf/2607.07775) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+
+</details>
 
 <details>
 <summary><a id='date-20260709'></a>2026-07-09（44篇论文）</summary>
@@ -262,15 +275,5 @@
 | Green for Go, Red for No: Visual Grounding via Semantic Segmentation for VLA Navigation Policies | Adrian Szvoren | <details><summary>detail</summary>Accepted for RSS 2026 workshop</details> | [PDF](https://arxiv.org/pdf/2607.05122) | - | - | <details><summary>总结</summary>1. **论文核心任务概括**  <br>   本论文的核心任务是评估视觉语义分割如何通过直观地高亮可行区域来增强视觉-语言-行动（VLA）模型在机器人导航中的表现。文章提出了一种基于分割的方法来改进VLA导航策略，从而使机器人能够更好地理解环境中的可导航区域，并根据自然语言指令进行导航。<br><br>2. **是否属于 World Model**：否  <br>   理由：虽然论文讨论了预测和规划的过程，但其核心是通过视觉分割来增强VLA模型的性能，而不是单纯学习环境状态的演变或进行长期规划。<br><br>3. **是否属于 VLA**：是  <br>   理由：输入包括自然语言指令和视觉输入，输出是机器人导航的行动。这符合VLA的定义。<br><br>4. **是否属于 Humanoid Loco-manipulation**：否  <br>   理由：论文中并没有提及使用类人机器人（humanoid）平台，也没有涉及任何具体的蛮力操控或整体协调的任务，重点在于视觉与语言的结合用于导航，而不是操纵和行走的联合控制。<br><br>5. **最终标签总结**  <br>   最终标签：VLA<br><br>6. **如果有歧义，请说明最容易混淆的点**  <br>   最容易混淆的点是论文中涉及的预测和规划过程，可能使人误以为它涵盖了World Model的概念。然而，论文明确侧重于视觉-语言-行动（VLA）模型在导航中的应用，并且使用视觉分割来提高模型的可靠性，而不是构建和学习一个世界模型。</details> |
 | Toward Personalized Social Robots for Child Well-being: Data Requirement Principles from a Recommender-System Perspective | Jin Huang | <details><summary>detail</summary>Accepted as a Late Breaking Report (LBR) at IEEE RO-MAN 2026</details> | [PDF](https://arxiv.org/pdf/2607.05110) | - | - | <details><summary>总结</summary>1. 论文核心任务概括：该论文探讨如何为儿童量身定制社交机器人，以提高儿童的福祉，并从推荐系统的角度提出了数据收集的原则。通过个性化建议，社交机器人需要适应儿童的不断变化的情感和理解状态，研究主要强调了在收集适当数据以实现个性化时所面临的挑战和解决方案。<br><br>2. 是否属于 World Model：不属于。该论文并不专注于学习环境的演化或状态预测，而是集中在如何为儿童推荐合适的机器人行为。这主要涉及数据收集和分析，而不是通过模型进行未来状态的预测和计划。<br><br>3. 是否属于 VLA：不属于。尽管论文提到了社交机器人与儿童的交互，但其输入没有明确提到涉及视觉和语言的数据处理。模型的输入主要是儿童的状态数据，机器人输出是行为推荐，而不是基于视觉和语言的理解。<br><br>4. 是否属于 Humanoid Loco-manipulation：不属于。论文讨论的社交机器人并未专注于类人形的身体协调运动或操控能力。其主要关注点是如何通过数据律和推荐系统调整机器人行为，且未涉及到 locomotion 和 manipulation 的联合控制。<br><br>5. 最终标签总结：不属于 World Model、VLA 或 Humanoid Loco-manipulation。<br><br>6. 如果有歧义，请说明最容易混淆的点：论文中提到的社交机器人与儿童的互动可能让人联想到机器人的行为控制，但实际上关注点在于推荐系统和数据管理，而非具体的动作规划或环境模型学习，因此需要注意区分。</details> |
 | Qantara: Bridge-Flow Training for Multi-Paradigm JEPA Control | Ruslan Rakhimov | <details><summary>detail</summary>. Project page:this https URL</details> | [PDF](https://arxiv.org/pdf/2607.04978) | [code1](https://corl-team.github.io/qantara) | - | <details><summary>总结</summary>1. **论文核心任务概括**  <br>   论文提出了Qantara，一个端到端的联合嵌入预测架构（JEPA），旨在通过一种桥流训练方法解决在视觉控制中单一推理范式的局限性。该模型可以在不重新训练的情况下支持计划、行为克隆和逆动态等不同的推理范式，从而构建一个灵活的控制模型。<br><br>2. **是否属于 World Model**：结论 + 理由  <br>   **属于**  <br>   理由：Qantara的核心在于学习世界动态模型，能够预测未来状态和观测。通过使用联合嵌入的预测架构，模型能够在推理时采用不同的推理范式，包括基于已学习的动态模型进行未来状态的前向推理，这符合World Model的定义。<br><br>3. **是否属于 VLA**：结论 + 理由  <br>   **不属于**  <br>   理由：虽然Qantara涉及视觉输入，但文中没有明确提到使用语言作为输入部分。模型的输入主要是原始像素数据，而没有涉及语言的嵌入，因此不符合VLA的标准。<br><br>4. **是否属于 Humanoid Loco-manipulation**：结论 + 理由  <br>   **不属于**  <br>   理由：虽然该模型在控制任务中执行动作，但并没有特指使用人形机器人进行的任务，也没有提及在其任务中涉及“人形”的行走和操控联合控制。模型似乎更专注于通用的控制和预测，而非特定于人形机器人的能力。<br><br>5. **最终标签总结**  <br>   **World Model**<br><br>6. **如果有歧义，请说明最容易混淆的点**  <br>   容易混淆的点在于Qantara提到了多种推理模式，包括行为克隆和逆动态，可能会让人联想到某些具体的动作执行情况下的路径规划。但由于模型没有明确结合人形机器人的特定任务需求，以及没有语言输入，因此可以排除VLA和Humanoid Loco-manipulation。</details> |
-
-</details>
-
-<details>
-<summary><a id='date-20260706'></a>2026-07-06（2篇论文）</summary>
-
-| Title | Author | Comment | PDF | Code | Relevance | Summary |
-|----------|----|---|---|---|---|----------|
-| Neuro-Symbolic Safety Guidance for Vision-Language-Action Models via Constrained Flow Matching | William English |  | [PDF](https://arxiv.org/pdf/2607.01378) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Episodic-to-Semantic Consolidation Without Identity Drift | Xue Qin |  | [PDF](https://arxiv.org/pdf/2607.01988) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
 
 </details>
