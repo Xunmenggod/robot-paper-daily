@@ -1,16 +1,76 @@
-# arXiv Robot 领域论文汇总（共257篇）
+# arXiv Robot 领域论文汇总（共268篇）
 
 > 说明：仅显示最近五天数据，当天论文默认展开，其他日期点击标题可展开/折叠
 > 相关性评分：基于LLM对机器人领域的相关性评定（1-5分，★越多相关性越高）
 
 ## 日期导航
+- [2026-09-10（54篇论文）](#date-20260910)
 - [2026-09-09（95篇论文）](#date-20260909)
 - [2026-09-08（38篇论文）](#date-20260908)
 - [2026-09-07（38篇论文）](#date-20260907)
 - [2026-09-06（43篇论文）](#date-20260906)
-- [2026-09-05（43篇论文）](#date-20260905)
 
-## <a id='date-20260909'></a>2026-09-09（95篇论文）
+## <a id='date-20260910'></a>2026-09-10（54篇论文）
+
+| Title | Author | Comment | PDF | Code | Relevance | Summary |
+|----------|----|---|---|---|---|----------|
+| Show-Harness: Just a VLM Agent Can Play Robots | Yanzhe Chen | <details><summary>detail</summary>Project website:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.10522) | [code1](https://showlab.github.io/Show-Harness) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation | Nisarga Nilavadi | <details><summary>detail</summary>Preprint, Project Page:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.10506) | [code1](https://utn-air.github.io/DUET-DINO) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Coastal Environment Generation with HoloOcean | Abigail Austin | <details><summary>detail</summary>Accepted to OCEANS 2026 Monterey</details> | [PDF](https://arxiv.org/pdf/2609.10484) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Multi-Agent Reinforcement Learning for Autonomous UAV Exploration in Wildfire Response | Caden Chandra |  | [PDF](https://arxiv.org/pdf/2609.10433) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Frequency-Conditioned Flow Matching for Vision-Language-Action Models | Haochen Niu |  | [PDF](https://arxiv.org/pdf/2609.10405) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| A traffic management system for large and heterogeneous vehicles in narrow industrial environments | Alessandro Bonetti |  | [PDF](https://arxiv.org/pdf/2609.10400) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Data-Driven Risk Fields for Safer End-to-End Autonomous Driving | Yuanxin Tian |  | [PDF](https://arxiv.org/pdf/2609.10377) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Odometer-Agnostic Drift Correction Using OpenStreetMap Lane Geometry | Joaquin Caballero | <details><summary>detail</summary>Accepted for publication in IEEE Robotics and Automation Letters (RA-L), 2026</details> | [PDF](https://arxiv.org/pdf/2609.10336) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Deformable Object Manipulation under Partial Observability via Real-Time Full-Shape Estimation | Kosar Behnia |  | [PDF](https://arxiv.org/pdf/2609.10308) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain | Junnosuke Kamohara |  | [PDF](https://arxiv.org/pdf/2609.10286) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| SwingBot: Learning Whole-Body Brachiation for Humanoid Robots | Yujie Xiong | <details><summary>detail</summary>CORL2026</details> | [PDF](https://arxiv.org/pdf/2609.10283) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| FolDeX: A Physical-World Benchmark for Long-Horizon Robotic Manipulation of Deformable Objects | Chenhuan Liu |  | [PDF](https://arxiv.org/pdf/2609.10243) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| CougarTail & CUB: A General-Purpose Mast and Central Utility Board for Cylindrical Underwater Enclosures | Ben Washburn |  | [PDF](https://arxiv.org/pdf/2609.10230) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Adaptive Shared Control with Online Bounded-Rational Human Behavior Estimation | Henry Ascencio Trejo |  | [PDF](https://arxiv.org/pdf/2609.10215) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Multi-Robot Scanner for Automated Full-Body Dermoscopic Imaging | Valerio Franchi |  | [PDF](https://arxiv.org/pdf/2609.10169) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Future-Aware Flow Planning for Safe UAV Target Following | Boning Feng |  | [PDF](https://arxiv.org/pdf/2609.10166) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Assembling Two Parts in One Hand | Liuao Pei | <details><summary>detail</summary>To appear on Conference on Robot Learning (CoRL) 2026. Project website:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.10137) | [code1](https://ltbgbird.github.io/in-hand-assembly-page/) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Automatic Reproducible Camera Intrinsic Calibration | Xiangcheng Hu |  | [PDF](https://arxiv.org/pdf/2609.10082) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers | Tianyue Wu | <details><summary>detail</summary>Project website:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.10050) | [code1](https://boyuan-an.github.io/GALATEA/) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| What Symmetry Buys a Learned Motion Planner | Andrea Emir Sevincel |  | [PDF](https://arxiv.org/pdf/2609.10033) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| AXON: A ROS 2 RMW with Shared-Memory/QUIC Transport and QKD/ML-KEM Key Establishment | Sergio Sánchez de la Fuente |  | [PDF](https://arxiv.org/pdf/2609.10024) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility | Runze Xu |  | [PDF](https://arxiv.org/pdf/2609.10021) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy | Zengjue Chen |  | [PDF](https://arxiv.org/pdf/2609.09941) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| ViBe: Visual Behavior Adaptation for Perceptive Humanoid Whole-Body Control | Lokesh Krishna | <details><summary>detail</summary>project page:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.09918) | [code1](https://lok-i.github.io/vibe-control/) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| GTA-2: A Multi-VLM Framework for Synthesizing Robot Manipulation Skills via Grounded Task Axes | M. Yunus Seker |  | [PDF](https://arxiv.org/pdf/2609.09808) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| HiRAD: A Flexible Large-Scale AGV Routing System | Yunjie Huang |  | [PDF](https://arxiv.org/pdf/2609.09752) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| PccDiffuser: Multi-solution Motion Planning for Continuum Robots | Ke Qiu | <details><summary>detail</summary>video</details> | [PDF](https://arxiv.org/pdf/2609.09745) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| CT-SAFR: Safe and Interpretable Chain-of-Thought Reasoning for Autonomous Robots: A Multi-Layered Verification Framework for Trustworthy AI-Driven Robotic Decision Making | Cagri Temel | <details><summary>detail</summary>. Accepted version. Published in 2026 IEEE Conference on Artificial Intelligence (CAI), pp. 598-603</details> | [PDF](https://arxiv.org/pdf/2609.09692) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| A Risk-Sensitive and Uncertainty-Aware Decision-Making and Control Framework for Safe and Robust Autonomous Driving | Zhuoren Li |  | [PDF](https://arxiv.org/pdf/2609.09650) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| JEPA Policy: Diffusion-Free Imitation Learning via Paired Action and Future Representation Prediction | Jie Xu | <details><summary>detail</summary>. Code:this https URL. Project page:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.09630) | [code1](https://jiejie567.github.io/JEPA-Policy/)<br>[code2](https://github.com/jiejie567/JEPA-Policy) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| MuJoCable: Reduced-Order Surface-Routed Cable Transmission for Tendon-Driven Robots | Yi Zhang |  | [PDF](https://arxiv.org/pdf/2609.09612) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Compact Visuotactile World Models for Lifting: Prediction, Reward Alignment, and Force Constraints | Qinzhen Ma(Rice University) | <details><summary>detail</summary>. Code and tabulated results included as ancillary material</details> | [PDF](https://arxiv.org/pdf/2609.09597) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Actuator Dynamics Curricula for Narrow-Viability Tasks in Legged Robot Learning | Kousheek Chakraborty | <details><summary>detail</summary>Accepted at 2026 Conference on Robot Learning (CoRL)</details> | [PDF](https://arxiv.org/pdf/2609.09492) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| A Decade of Bayesian Optimization for Controller Tuning and Robot Learning: Tutorial, Review, and Future Prospects | David Stenger | <details><summary>detail</summary>Currently under review</details> | [PDF](https://arxiv.org/pdf/2609.09403) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| AccelMPC: High-Rate, Low-Power FPGA-Accelerated Model Predictive Control for Tiny Drones | Andrea Grillo |  | [PDF](https://arxiv.org/pdf/2609.09380) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| No Free Checker: A Survey of Verifiers for Robot Policies | Yang Wan | <details><summary>detail</summary>Survey., 187 references. Covers reward models, success and failure detection, temporal-logic and formal verification, world-model evaluation, and reward hacking. Project page:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.09250) | [code1](https://github.com/ZJUSCL/Awesome-Robot-Verifier) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Learning to Fly: Stable Vision-Guided UAV Servoing with Compact Target-Centric Cues and Reinforcement Learning | Saurbh Singh Jamwal |  | [PDF](https://arxiv.org/pdf/2609.09234) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Design and Attitude Control of an Underwater Quadruped Robot | Davide Molinaroli | <details><summary>detail</summary>. Accepted to ISRR 2026</details> | [PDF](https://arxiv.org/pdf/2609.09217) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Geometry Conditioning in an Embodied SLM: Training Controls and Robustness Diagnostics in a 0.8B Hybrid Model | Hao Li | <details><summary>detail</summary>. Includes ancillary data and analysis code</details> | [PDF](https://arxiv.org/pdf/2609.09213) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Identifying Habit, Physics, and Nuisance in Robot World Models | Jinting Hang |  | [PDF](https://arxiv.org/pdf/2609.09210) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving | Lin Huang |  | [PDF](https://arxiv.org/pdf/2609.10372) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Frame-Coded Legged Locomotion over Noisy Terrain | Lav R. Varshney |  | [PDF](https://arxiv.org/pdf/2609.10273) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| IMU-Centric Moving Horizon Estimation for Lateral Dynamics Estimation Across Vehicles and Grip Conditions | Seuffo Akouan ha Ngoune | <details><summary>detail</summary>Accepted at the 29th IEEE International Conference on Intelligent Transportation Systems (ITSC 2026).</details> | [PDF](https://arxiv.org/pdf/2609.10202) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability | Arnab Chattopadhayay | <details><summary>detail</summary>Total number of pages: 19, total number of figures: 5</details> | [PDF](https://arxiv.org/pdf/2609.10036) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Time-Frequency Geometric Cross-Attention for Chunked Vision-Language-Action Models | Shengye Dong |  | [PDF](https://arxiv.org/pdf/2609.09925) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Decision Transformer for UAV-Mounted RIS-Assisted Dynamic D2D Communications | Yaxuan Liu |  | [PDF](https://arxiv.org/pdf/2609.09885) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| CLFTv2: Efficient Camera-LiDAR Fusion for Semantic Segmentation via Hierarchical Feature Pyramids | Toomas Tahves |  | [PDF](https://arxiv.org/pdf/2609.09881) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| RealSimLoop: Online Real-to-Sim Adaptation via Differentiable Reduced-Order Simulation with Vision Feedback | Zhihao Cen |  | [PDF](https://arxiv.org/pdf/2609.09828) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| InstantMimic: A High Performance System for Learning Physics-based Skills in Seconds | Ikjun Choi | <details><summary>detail</summary>Accepted to SIGGRAPH Asia 2026 Conference Papers. . Project page:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.09821) | [code1](https://scripter36.github.io/projects/instantmimic/) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Why Learning Rediscovers the Closed-Form Diagonal Regularizer | Jeahn Han | <details><summary>detail</summary>main paper: appendix</details> | [PDF](https://arxiv.org/pdf/2609.09656) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive | Faiq Shamass | <details><summary>detail</summary>. Technical report. Negative result. Code:this https URL</details> | [PDF](https://arxiv.org/pdf/2609.09478) | [code1](https://github.com/fshamass/Tanh-Bypass) | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Fast Constraint Extraction for Corrective Control under STL Specifications via Logical Dependency Tracking | Antoine Besset | <details><summary>detail</summary>Accepted for publication at 65th IEEE Conference on Decision and Control (CDC 26)</details> | [PDF](https://arxiv.org/pdf/2609.09439) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Decision-Focused Active Learning for Scale-Aware Critical-Materials Recovery | Niranjan Srinivas |  | [PDF](https://arxiv.org/pdf/2609.09413) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+| Networked Admissibility-Preserving Control for Directed Safe Coordination | Abhinav Sinha |  | [PDF](https://arxiv.org/pdf/2609.09384) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
+
+<details>
+<summary><a id='date-20260909'></a>2026-09-09（95篇论文）</summary>
 
 | Title | Author | Comment | PDF | Code | Relevance | Summary |
 |----------|----|---|---|---|---|----------|
@@ -110,6 +170,8 @@
 | \textbf{PLATO}: \emph{Preintegration Learning from Accurate Trajectory Observations} for Neural Inertial Odometry | Haoying Li |  | [PDF](https://arxiv.org/pdf/2609.06450) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
 | Collision Snapshot Guided Time-Reversed Safety-Critical Scenario Generation | Taehyung Kim |  | [PDF](https://arxiv.org/pdf/2609.06433) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
 
+</details>
+
 <details>
 <summary><a id='date-20260908'></a>2026-09-08（38篇论文）</summary>
 
@@ -204,57 +266,6 @@
 
 <details>
 <summary><a id='date-20260906'></a>2026-09-06（43篇论文）</summary>
-
-| Title | Author | Comment | PDF | Code | Relevance | Summary |
-|----------|----|---|---|---|---|----------|
-| GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation | Yupeng Zheng |  | [PDF](https://arxiv.org/pdf/2609.04193) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Adaptive Vision-Language Grasping via Composable Foundation Priors and Generalizable Grasp Synthesis | Sixu Yan |  | [PDF](https://arxiv.org/pdf/2609.04096) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| MulDP: Multimodal Diffusion Policy for Autonomous Quadruped Parkour Navigation across Complex Terrains | Kangmai Hu | <details><summary>detail</summary>IROS 2026 Accept</details> | [PDF](https://arxiv.org/pdf/2609.03984) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Automated Weld Seam Recognition and 3D Mapping for Robotic Post Processing Using Photogrammetry and Semantic Segmentation | Augustin Raju | <details><summary>detail</summary>Extended abstract not yet published to a conference or journal</details> | [PDF](https://arxiv.org/pdf/2609.03970) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models | Shaunak A. Mehta |  | [PDF](https://arxiv.org/pdf/2609.03927) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Revisiting Topological Graphs for Macro Action based Closed-loop Reinforcement Learning of Vision Language Navigation in Continuous Environment | Shuhao Ye |  | [PDF](https://arxiv.org/pdf/2609.03906) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| FWBC-VLA: Force-Aware Whole-Body Compensation for Contact-Rich Loco-Manipulation | Yutian Zhang |  | [PDF](https://arxiv.org/pdf/2609.03889) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Robot Aware Computational Design of Object Specific Passive Grippers for Additive Manufacturing | Abdullah Yahya Abdullah Omaisan |  | [PDF](https://arxiv.org/pdf/2609.03761) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| A Multi-Vine Soft Robot Enabling Accessible Working Channel and Steering | Reza Kashef | <details><summary>detail</summary>Hamlyn Symposium on Medical Robotics 2026</details> | [PDF](https://arxiv.org/pdf/2609.03758) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| RoughSense: Lightweight Terrain-Induced Rover Vibration Prediction Using Point Clouds and IMU Feedback | Gabriel Manuel Garcia |  | [PDF](https://arxiv.org/pdf/2609.03720) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO? | Kohei Sendai |  | [PDF](https://arxiv.org/pdf/2609.03715) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Predictive Zonotope Reduction: Precise Runtime Monitoring under Uncertainty | Vladimir Krsmanovic |  | [PDF](https://arxiv.org/pdf/2609.03699) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| WISE: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models | Chenhao Zhang |  | [PDF](https://arxiv.org/pdf/2609.03681) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Local Path Planning and Obstacle Avoidance for an Omnicopter Platform | Mikolaj Helinski | <details><summary>detail</summary>accepted paper at ICUAS 2026</details> | [PDF](https://arxiv.org/pdf/2609.03630) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| QLAUN: A Research-Oriented, Robust, Agile, Modular, and Affordable Torque-Controlled Quadruped Robot | Mohamad S. Moudallal | <details><summary>detail</summary>Extended abstract presented at IEEE ICRA@40, Rotterdam, Netherlands, September 2024.</details> | [PDF](https://arxiv.org/pdf/2609.03623) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| FailBench: How Reliable are VLMs at Judging Robot Task Success? | Zaruhi Navasardyan |  | [PDF](https://arxiv.org/pdf/2609.03611) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Scaling Bimanual Household Manipulation from 1,500 hours of Demonstrations to On-Policy Corrections | Jiafeng Xu |  | [PDF](https://arxiv.org/pdf/2609.03591) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Toward Physically Grounded JEPA World Models for Goal-Conditioned Robotic Planning | Muyuan Liu(1) | <details><summary>detail</summary>. Accepted to the IROS 2026 Workshop on Physical World Models for Scaling Embodied AI (PWMS 2026)</details> | [PDF](https://arxiv.org/pdf/2609.03565) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| TRaIL-Odom: Tightly Coupled Continuous Time Radar-IMU-LiDAR Odometry with Adaptive Doppler Weighting | Chiyun Noh | <details><summary>detail</summary>Accepted for publication at the IEEE Robotics and Automation Letters on 23 August, 2026</details> | [PDF](https://arxiv.org/pdf/2609.03561) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| BRIDGE: An Open-Source Humanoid Platform via Morphology-Control Co-Design for Physical AI | Jianren Wang |  | [PDF](https://arxiv.org/pdf/2609.03497) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps | Shuning Zhang |  | [PDF](https://arxiv.org/pdf/2609.03483) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Programming and execution of skill-based human-robot-crane collaborative tasks | Taneli Lohi | <details><summary>detail</summary>accepted for publication in IECON 2026</details> | [PDF](https://arxiv.org/pdf/2609.03392) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| ARTiS: An Adaptive Robotic Gripper for Enhanced Tool Manipulation in Disassembly Applications | Roman Mykhailyshyn | <details><summary>detail</summary>Accepted to TASE</details> | [PDF](https://arxiv.org/pdf/2609.03362) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| R2S-Eval: Robot Evaluation with Real-to-Sim Calibration via Vision-Language Models | Yidi Wang |  | [PDF](https://arxiv.org/pdf/2609.03276) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Establishing a Dynamic Multimodal HRI Dataset for Engagement Analysis with a Humanoid Robot | Buwan Kim |  | [PDF](https://arxiv.org/pdf/2609.03255) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Long-Horizon Consistent and Interaction-Aware World Models for Multi-Style End-to-End Driving | Yuxuan Han |  | [PDF](https://arxiv.org/pdf/2609.03225) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Following a Unique Path: A Fast Certifier Applied to Outlier-Robust Pose Registration | Connor Holmes |  | [PDF](https://arxiv.org/pdf/2609.03222) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Real-Time Shape Control of Multi-Segment Soft Robotic Arms Using Koopman Operators with Global and Local Observables | Jiahe Wang | <details><summary>detail</summary>submitted to TRO</details> | [PDF](https://arxiv.org/pdf/2609.03175) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Sensing Which Modality Matters: Evidence-Gated Regularization for Robust VLA Policies | Yue Yang |  | [PDF](https://arxiv.org/pdf/2609.03142) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| GPU-Accelerated Astrodynamics World Models for Spacecraft Rendezvous and Proximity Operations | Duncan Eddy | <details><summary>detail</summary>Presented at Advanced Maui Optical and Space Surveillance Technologies Conference 2026</details> | [PDF](https://arxiv.org/pdf/2609.03067) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Seeing Less Is Not Seeing Safely: Privacy Leakage from Task-Scoped Robot Perception Exports | Yuqiao Xu |  | [PDF](https://arxiv.org/pdf/2609.03055) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Formation Matrix and Energy-based Control of Multi-Agent Systems | Martín Crespo |  | [PDF](https://arxiv.org/pdf/2609.04158) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| A Low-Cost, Open Platform for End-to-End Autonomous Driving on a Miniature Ackermann Vehicle | Gustavo Claudio Karl Couto |  | [PDF](https://arxiv.org/pdf/2609.04147) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving | Ruoyu Yao |  | [PDF](https://arxiv.org/pdf/2609.04070) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Subspace Inference Enables Efficient Active Reward Learning from Preferences | Yutai Zhou | <details><summary>detail</summary>Published at TMLR</details> | [PDF](https://arxiv.org/pdf/2609.04066) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Catalogue Photography as a Cold Start: Toward Deployable Carbide Burr Recognition | Abilash Philip Madavath | <details><summary>detail</summary>Extended abstract not yet published to a conference or journal</details> | [PDF](https://arxiv.org/pdf/2609.03995) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| GraFT: A Training-Free Framework for Spatial Reasoning in Multimodal Large Language Models via 3D Scene Graphs | Junqing Du |  | [PDF](https://arxiv.org/pdf/2609.03892) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Rethinking World Models for Safety-Critical Embodied Systems | Kailang Ma | <details><summary>detail</summary>. Perspective article</details> | [PDF](https://arxiv.org/pdf/2609.03774) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| DropClick: Semi-Automated One-Click Segmentation for Agricultural Robotic Data | Patrick Zimmer | <details><summary>detail</summary>Accepted to ICRA 2026</details> | [PDF](https://arxiv.org/pdf/2609.03680) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Understanding Autonomous Driving Datasets by Describing Differences between Image Subsets in Natural Language | Julian Truetsch | <details><summary>detail</summary>submitted to the IEEE Open Journal of Intelligent Transportation Systems (OJ-ITS), our implementation and benchmark dataset are available atthis https URL</details> | [PDF](https://arxiv.org/pdf/2609.03677) | [code1](https://github.com/KIT-MRT/AD-Diff) | - | <details><summary>总结</summary>大模型总结失败</details> |
-| SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving | Jinyang Wang |  | [PDF](https://arxiv.org/pdf/2609.03602) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning | Howard Qian |  | [PDF](https://arxiv.org/pdf/2609.03199) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-| Equilibria for Networks of Linear Translational Springs | Luke Oeding |  | [PDF](https://arxiv.org/pdf/2609.03143) | - | - | <details><summary>总结</summary>大模型总结失败</details> |
-
-</details>
-
-<details>
-<summary><a id='date-20260905'></a>2026-09-05（43篇论文）</summary>
 
 | Title | Author | Comment | PDF | Code | Relevance | Summary |
 |----------|----|---|---|---|---|----------|
