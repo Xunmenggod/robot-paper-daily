@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+# Legacy source / optional full export; canonical data lives in data/papers/.
+/arxiv_cs_ro_papers_final.json

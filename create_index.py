@@ -6,6 +6,7 @@ arXiv 机器人领域论文汇总 - HTML 生成器
 """
 
 import json
+from paper_store import DEFAULT_DATA_PATH, load_papers
 import re
 import sys
 import argparse
@@ -23,7 +24,7 @@ logging.basicConfig(
 )
 
 # -------------------------- 默认配置 --------------------------
-DEFAULT_JSON_PATH = "arxiv_cs_ro_papers_final.json"
+DEFAULT_JSON_PATH = DEFAULT_DATA_PATH
 DEFAULT_TEMPLATE_PATH = "template.html"
 DEFAULT_OUTPUT_PATH = "index.html"
 DEFAULT_RECENT_DAYS = 5
@@ -228,8 +229,7 @@ def json_to_html(json_path: str, output_path: str, template_path: str) -> bool:
     
     # 1. 读取 JSON 数据
     try:
-        with open(json_path, "r", encoding="utf-8") as f:
-            date_papers = json.load(f)
+        date_papers = load_papers(json_path)
         if not date_papers:
             logging.error("JSON 文件中无论文数据")
             return False
@@ -254,8 +254,7 @@ def json_to_html(json_path: str, output_path: str, template_path: str) -> bool:
         return False
     
     # 3. 筛选最近几天有数据的日期
-    recent_dates = get_recent_dates(DEFAULT_RECENT_DAYS)
-    valid_dates = [d for d in recent_dates if d in date_papers and date_papers[d]]
+    valid_dates = sorted((d for d, papers in date_papers.items() if papers), reverse=True)[:DEFAULT_RECENT_DAYS]
     
     if not valid_dates:
         logging.warning(f"⚠️ 最近 {DEFAULT_RECENT_DAYS} 天内无有效论文数据")
@@ -316,7 +315,7 @@ def main():
     )
     
     parser.add_argument("--json", default=DEFAULT_JSON_PATH,
-                        help=f"JSON 数据文件路径 (默认：{DEFAULT_JSON_PATH})")
+                        help=f"归档目录或旧版 JSON 文件路径 (默认：{DEFAULT_JSON_PATH})")
     parser.add_argument("--template", default=DEFAULT_TEMPLATE_PATH,
                         help=f"HTML 模板文件路径 (默认：{DEFAULT_TEMPLATE_PATH})")
     parser.add_argument("--output", default=DEFAULT_OUTPUT_PATH,

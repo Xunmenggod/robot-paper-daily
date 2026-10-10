@@ -11,6 +11,8 @@ import re
 import http.client
 import traceback
 
+from paper_store import DEFAULT_DATA_PATH, load_papers, save_papers
+
 
 # -------------------------- 全局变量与信号处理 --------------------------
 all_papers_global: Dict[str, List[Dict]] = {}  # 按日期组织的论文数据 {date: [papers]}
@@ -20,8 +22,7 @@ def signal_handler(sig, frame):
     logging.info("\n检测到手动中断（Ctrl+C），正在保存当前数据...")
     try:
         if all_papers_global:
-            with open(JSON_SAVE_PATH, "w", encoding="utf-8") as f:
-                json.dump(all_papers_global, f, ensure_ascii=False, indent=4)
+            save_papers(all_papers_global, JSON_SAVE_PATH)
             logging.info(f"已保存数据到 JSON 文件，包含 {len(all_papers_global)} 个日期的数据")
             json_to_markdown(JSON_SAVE_PATH, MD_SAVE_PATH)
         else:
@@ -29,7 +30,7 @@ def signal_handler(sig, frame):
     except Exception as e:
         logging.error(f"中断时保存数据失败：{str(e)}")
     finally:
-        sys.exit(0)
+        sys.exit(130)
 
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -56,7 +57,7 @@ LLM_API_HOST = "api.chatanywhere.org" # https://github.com/chatanywhere/GPT_API_
 LLM_API_ENDPOINT = "/v1/chat/completions"
 LLM_MODEL = "gpt-4o-mini"
 LLM_PROMPT = os.getenv("LLM_PROMPT")
-logging.info(f"api: {LLM_API_KEY}, prompt: {LLM_PROMPT}")
+
 
 # 爬取配置
 REQUEST_INTERVAL = 1.2
@@ -65,7 +66,7 @@ MAX_CRAWL_PAGES = 1  # 最大爬取页数，None表示无限制
 INITIAL_ARXIV_URL = "https://arxiv.org/list/cs.RO/recent?show=100"  # cs.RO领域最新论文
 
 # 存储配置
-JSON_SAVE_PATH = "arxiv_cs_ro_papers_final.json"
+JSON_SAVE_PATH = DEFAULT_DATA_PATH
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 # MD_SAVE_PATH = f"{CURRENT_DATE}_papers.md"
 MD_SAVE_PATH = f"README.md"
@@ -235,6 +236,10 @@ def extract_related_work(soup: BeautifulSoup) -> str:
     return "\n\n".join(contents) if contents else "未获取到相关工作"
 
 
+class SummaryError(RuntimeError):
+    """Safe-to-log summary failure; response bodies are never included."""
+
+
 def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_work: str) -> Dict:
     """调用LLM生成总结，并提取1-5分相关性评分"""
     system_prompt = LLM_PROMPT
@@ -253,36 +258,39 @@ def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_wor
         "Content-Type": "application/json"
     }
     
+    conn = None
     try:
         conn = http.client.HTTPSConnection(LLM_API_HOST, timeout=40)
         conn.request("POST", LLM_API_ENDPOINT, payload, headers)
         res = conn.getresponse()
         
         if res.status != 200:
-            raise Exception(f"API 状态码异常：{res.status}，响应：{res.read().decode('utf-8')}")
+            # Provider responses can contain credentials; never log/store their body.
+            raise SummaryError(f"LLM HTTP {res.status}; check PAPER_TOKEN and provider access")
         
         data = json.loads(res.read().decode("utf-8"))
-        conn.close()
         
         # 提取总结内容
         summary = data["choices"][0]["message"]["content"].strip()
         # 提取1-5分评分（默认0分表示提取失败）
         score_match = LLM_SCORE_PATTERN.search(summary)
         score = int(score_match.group(1)) if score_match and 1 <= int(score_match.group(1)) <= 5 else 0
+        if not summary or not score:
+            raise ValueError("LLM response has no valid summary/relevance score")
         
         return {
             "summary": summary,
             "score": score,  # 评分（1-5或0）
             "error": ""
         }
+    except SummaryError:
+        raise
     except Exception as e:
-        error_msg = str(e)
-        logging.error(f"大模型调用失败：{error_msg}")
-        return {
-            "summary": "大模型总结失败",
-            "score": 0,  # 调用失败默认0分
-            "error": error_msg
-        }
+        # Do not include raw response bodies, headers or exception text in logs.
+        raise SummaryError(f"LLM request/response failed ({type(e).__name__})") from None
+    finally:
+        if conn is not None:
+            conn.close()
     
 
 def get_recent_dates(limit: int = 3) -> List[str]:
@@ -295,33 +303,17 @@ def get_recent_dates(limit: int = 3) -> List[str]:
 
 
 def json_to_markdown(json_path: str, md_path: str) -> None:
-    """生成Markdown表格，最近三天数据，当天展开，其他日期折叠，添加日期导航"""
-    try:
-        with open(json_path, "r", encoding="utf-8") as f:
-            date_papers = json.load(f)
-        if not date_papers:
-            logging.warning("JSON 中无论文数据，无法生成 Markdown")
-            return
-    except Exception as e:
-        logging.error(f"读取 JSON 失败：{str(e)}")
-        return
-    
-    # 获取最近n天日期（按从新到旧排序）
-    recent_dates = get_recent_dates(8)
-    # 筛选出有数据的日期，最多保留n天
-    valid_dates = [date for date in recent_dates if date in date_papers and len(date_papers[date]) > 0][:5]
-
-    # 确定最新有数据的日期（应该是valid_dates中的第一个）
-    latest_valid_date = valid_dates[0]
-    
+    """生成最近五个有数据日期的Markdown表格及日期导航"""
+    date_papers = load_papers(json_path)
+    valid_dates = sorted((day for day, papers in date_papers.items() if papers), reverse=True)[:5]
     if not valid_dates:
-        logging.warning("无有效论文数据，无法生成 Markdown")
-        return
-    
+        raise ValueError("No paper data available for Markdown")
+    latest_valid_date = valid_dates[0]
+
     # 基础信息
     total_papers = sum(len(date_papers[date]) for date in valid_dates)
     md_title = f"# arXiv Robot 领域论文汇总（共{total_papers}篇）"
-    md_intro = "> 说明：仅显示最近五天数据，当天论文默认展开，其他日期点击标题可展开/折叠\n"
+    md_intro = "> 说明：仅显示最近五个有数据的日期，当天论文默认展开，其他日期点击标题可展开/折叠\n"
     md_intro += "> 相关性评分：基于LLM对机器人领域的相关性评定（1-5分，★越多相关性越高）\n\n"
     
     # 添加日期导航超链接列表
@@ -416,26 +408,19 @@ def json_to_markdown(json_path: str, md_path: str) -> None:
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(md_content)
         logging.info(f"Markdown 表格已保存至：{md_path}")
-    except Exception as e:
-        logging.error(f"保存 Markdown 失败：{str(e)}")
+    except Exception:
+        logging.error("保存 Markdown 失败")
+        raise
 
 
 # -------------------------- 核心函数 --------------------------
 def crawl_and_process_papers(initial_url: str, max_pages: Optional[int] = None) -> Dict[str, List[Dict]]:
     """爬取arxiv论文列表，按日期组织论文数据"""
     global all_papers_global
-    # 加载历史数据（按日期组织）
-    try:
-        with open(JSON_SAVE_PATH, "r", encoding="utf-8") as f:
-            all_papers_global = json.load(f)
-        logging.info(f"已加载历史数据，包含 {len(all_papers_global)} 个日期的数据")
-    except FileNotFoundError:
-        logging.info("无历史数据，将新建 JSON 文件")
-        all_papers_global = {}
-    except Exception as e:
-        logging.warning(f"加载历史数据失败：{str(e)}，将重新爬取")
-        all_papers_global = {}
-    
+    # Missing or corrupt history must abort; never replace it with an empty archive.
+    all_papers_global = load_papers(JSON_SAVE_PATH)
+    logging.info(f"已加载历史数据，包含 {len(all_papers_global)} 个日期的数据")
+
     # 计算当前已爬取的论文总数
     total_papers = sum(len(papers) for papers in all_papers_global.values())
     current_page = 0  # 当前页码
@@ -447,7 +432,7 @@ def crawl_and_process_papers(initial_url: str, max_pages: Optional[int] = None) 
     
     while True:
         # 终止条件：达到最大页数
-        if current_page > max_pages:
+        if max_pages is not None and current_page > max_pages:
             logging.info(f"已达最大爬取页数 {max_pages}，停止爬取")
             break
         
@@ -455,14 +440,12 @@ def crawl_and_process_papers(initial_url: str, max_pages: Optional[int] = None) 
         # 1. 获取列表页Soup
         list_soup = get_arxiv_soup(initial_url)
         if not list_soup:
-            logging.error(f"第 {current_page} 页列表页爬取失败，跳过")
-            break
+            raise RuntimeError(f"arXiv list page {current_page} could not be fetched")
         
         # 2. 提取论文列表（dt=链接信息，dd=元数据）
         articles_dl = list_soup.find("dl", id="articles")
         if not articles_dl:
-            logging.error(f"第 {current_page} 页无论文数据，跳过")
-            break
+            raise RuntimeError(f"arXiv list page {current_page} has no articles list")
         
         dt_list = articles_dl.find_all("dt")
         dd_list = articles_dl.find_all("dd")
@@ -485,19 +468,15 @@ def crawl_and_process_papers(initial_url: str, max_pages: Optional[int] = None) 
             html_link = html_link_tag["href"].strip()
             html_link = f"https://arxiv.org{html_link}" if html_link.startswith("/") else html_link
             
-            # 检查是否已爬取（避免重复）
-            is_duplicate = False
-            for papers in all_papers_global.values():
-                for paper in papers:
-                    if paper.get("arxiv_html_link") == html_link and paper.get("llm_summary") != "大模型总结失败":
-                        is_duplicate = True
-                        break
-                if is_duplicate:
-                    break
-            if is_duplicate:
+            # Reuse successful rows; retry a failed row in place, without appending
+            # a duplicate on every scheduled run. Existing duplicate history is kept.
+            matches = [paper for papers in all_papers_global.values() for paper in papers
+                       if paper.get("arxiv_html_link") == html_link]
+            if any(paper.get("llm_summary") not in (None, "", "大模型总结失败")
+                   and not paper.get("llm_error") for paper in matches):
                 logging.info(f"论文已爬取，跳过：{html_link}")
                 continue
-            
+
             # 3.2 提取PDF链接
             pdf_link = extract_pdf_link(dt)
             
@@ -558,17 +537,16 @@ def crawl_and_process_papers(initial_url: str, max_pages: Optional[int] = None) 
                 "llm_error": llm_result["error"]
             }
             # 添加到当前日期的列表中
-            all_papers_global[current_date].append(paper_data)
+            if matches:
+                matches[0].update(llm_summary=llm_result["summary"],
+                                  llm_score=llm_result["score"], llm_error="")
+            else:
+                all_papers_global[current_date].append(paper_data)
             logging.info(f"第 {current_page} 页 - 完成第 {idx} 篇论文：{title[:30]}...")
         
-        # 4. 保存当前页数据到JSON
-        try:
-            with open(JSON_SAVE_PATH, "w", encoding="utf-8") as f:
-                json.dump(all_papers_global, f, ensure_ascii=False, indent=4)
-            logging.info(f"第 {current_page} 页数据已保存至 JSON：{JSON_SAVE_PATH}")
-        except Exception as e:
-            logging.error(f"保存第 {current_page} 页数据失败：{str(e)}")
-        
+        # Save errors must fail the job before any publishing step.
+        save_papers(all_papers_global, JSON_SAVE_PATH)
+
         # 5. 获取下一页链接
         next_page_tag = list_soup.find("a", string=lambda x: x and "next" in x.lower() and ">" in x)
         if not next_page_tag or "href" not in next_page_tag.attrs:
@@ -589,6 +567,10 @@ if __name__ == "__main__":
         logging.error("请先替换 LLM_API_KEY 为真实有效的 API Key！")
         sys.exit(1)
     
+    if not LLM_PROMPT or not LLM_PROMPT.strip():
+        logging.error("请配置 EMBODIED_PROMPT 仓库变量")
+        sys.exit(1)
+
     # 2. 初始化日志
     logging.info("="*60)
     logging.info("          arXiv cs.RO 领域论文爬取与LLM总结程序          ")
@@ -627,8 +609,7 @@ if __name__ == "__main__":
         logging.error(error_msg)
         if all_papers_global:
             try:
-                with open(JSON_SAVE_PATH, "w", encoding="utf-8") as f:
-                    json.dump(all_papers_global, f, ensure_ascii=False, indent=4)
+                save_papers(all_papers_global, JSON_SAVE_PATH)
                 total_count = sum(len(papers) for papers in all_papers_global.values())
                 logging.info(f"已保存异常中断前的 {total_count} 篇论文数据")
             except Exception as save_e:
