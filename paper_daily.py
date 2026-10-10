@@ -241,6 +241,20 @@ class SummaryError(RuntimeError):
 
 
 def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_work: str) -> Dict:
+    """Retry only transient connection failures; never retry invalid credentials."""
+    for attempt in range(3):
+        try:
+            return _call_llm_for_summary_once(title, abstract, introduction, relate_work)
+        except (TimeoutError, ConnectionError) as error:
+            if attempt == 2:
+                raise SummaryError(
+                    f"LLM connection failed after 3 attempts ({type(error).__name__})"
+                ) from None
+            logging.warning("LLM connection interrupted; retrying attempt %s/3", attempt + 2)
+            time.sleep(2 ** (attempt + 1))
+
+
+def _call_llm_for_summary_once(title: str, abstract: str, introduction: str, relate_work: str) -> Dict:
     """调用LLM生成总结，并提取1-5分相关性评分"""
     # Put the machine-readable score first so a token limit cannot truncate it.
     # Keep the owner's relevance criteria and summary instructions unchanged.
@@ -265,7 +279,7 @@ def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_wor
     
     conn = None
     try:
-        conn = http.client.HTTPSConnection(LLM_API_HOST, timeout=40)
+        conn = http.client.HTTPSConnection(LLM_API_HOST, timeout=90)
         conn.request("POST", LLM_API_ENDPOINT, payload, headers)
         res = conn.getresponse()
         
@@ -293,6 +307,9 @@ def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_wor
             "error": ""
         }
     except SummaryError:
+        raise
+    except (TimeoutError, ConnectionError):
+        # Let the outer bounded retry handle transient failures without logging data.
         raise
     except Exception as e:
         # Do not include raw response bodies, headers or exception text in logs.
