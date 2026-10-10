@@ -57,6 +57,33 @@ class SummaryTests(unittest.TestCase):
         self.assertNotIn('sensitive-request-value', str(raised.exception))
         connection.close.assert_called_once()
 
+    def test_timeout_retries_with_new_connection_and_then_succeeds(self):
+        first, second = self.connection(), self.connection()
+        first.getresponse.side_effect = TimeoutError('private-network-marker')
+        with patch.object(daily.http.client, 'HTTPSConnection', side_effect=[first, second]) as connect, \
+             patch.object(daily.time, 'sleep') as sleep:
+            result = daily.call_llm_for_summary('t', 'a', 'i', 'r')
+        self.assertEqual(result['score'], 4)
+        self.assertEqual(connect.call_count, 2)
+        self.assertEqual(connect.call_args.kwargs['timeout'], 90)
+        sleep.assert_called_once_with(2)
+        first.close.assert_called_once()
+        second.close.assert_called_once()
+
+    def test_connection_retries_are_bounded_and_do_not_expose_error_text(self):
+        for failure in (TimeoutError, ConnectionResetError):
+            with self.subTest(failure=failure):
+                connection = self.connection()
+                connection.request.side_effect = failure('private-network-marker')
+                with patch.object(daily.http.client, 'HTTPSConnection', return_value=connection) as connect, \
+                     patch.object(daily.time, 'sleep') as sleep:
+                    with self.assertRaisesRegex(daily.SummaryError, 'after 3 attempts') as raised:
+                        daily.call_llm_for_summary('t', 'a', 'i', 'r')
+                self.assertEqual(connect.call_count, 3)
+                self.assertEqual(sleep.call_count, 2)
+                self.assertEqual(connection.close.call_count, 3)
+                self.assertNotIn('private-network-marker', str(raised.exception))
+
     def test_invalid_summary_is_not_accepted(self):
         connection = self.connection(content='No score')
         with patch.object(daily.http.client, 'HTTPSConnection', return_value=connection):
