@@ -24,8 +24,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          # Preserve the existing publishing credential / Pages behavior.
-          token: ${{ secrets.GIT_TOKEN }}
+          # Keep an existing publishing token; otherwise use this job's scoped token.
+          token: ${{ secrets.GIT_TOKEN || github.token }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
