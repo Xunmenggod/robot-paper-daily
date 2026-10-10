@@ -63,6 +63,32 @@ class SummaryTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 daily.call_llm_for_summary('t', 'a', 'i', 'r')
 
+    def test_score_format_variants_and_first_line_instruction(self):
+        for content in ('分数：4分\n论文总结。', '**分数：** 4 分\n论文总结。',
+                        '**相关性评分**: **4**分\n论文总结。', '评分 : 4 分\n论文总结。'):
+            with self.subTest(content=content):
+                connection = self.connection(content=content)
+                with patch.object(daily, 'LLM_PROMPT', 'Owner relevance criteria'), \
+                     patch.object(daily.http.client, 'HTTPSConnection', return_value=connection):
+                    result = daily.call_llm_for_summary('t', 'a', 'i', 'r')
+                self.assertEqual(result['score'], 4)
+                self.assertEqual(result['summary'], content)
+                payload = json.loads(connection.request.call_args.args[2])
+                prompt = payload['messages'][0]['content']
+                self.assertTrue(prompt.startswith('Owner relevance criteria'))
+                self.assertIn('第一行', prompt)
+
+    def test_rejects_invalid_or_score_only_responses_without_exposing_body(self):
+        for content in ('分数：0分 private-marker', '分数：6分 private-marker',
+                        '分数：14分 private-marker', '分数：4.5分 private-marker',
+                        'private-marker 4 pages', '分数：4分', '**分数**：**4**分'):
+            with self.subTest(content=content):
+                connection = self.connection(content=content)
+                with patch.object(daily.http.client, 'HTTPSConnection', return_value=connection):
+                    with self.assertRaisesRegex(daily.SummaryError, 'HTTP 200 response') as raised:
+                        daily.call_llm_for_summary('t', 'a', 'i', 'r')
+                self.assertNotIn('private-marker', str(raised.exception))
+
     def test_cli_rejects_missing_key_and_prompt_without_printing_key(self):
         with tempfile.TemporaryDirectory() as temp:
             for key, prompt in (('', 'prompt'), ('fake-test-only-marker', '')):
