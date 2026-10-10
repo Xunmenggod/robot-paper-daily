@@ -1,63 +1,65 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Run Arxiv Papers Daily
 
-# Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    - cron: "0 1/24 * * *" # - cron:  "* 9/24 * * *"  #'*/60 * * * *' 
-  # Triggers the workflow on push or pull request events but only for the main branch
-#   push:
-#     branches:
-#     - main
+    - cron: "0 1/24 * * *"
 
-env:
-  GITHUB_USER_NAME: Xunmenggod
-  GITHUB_USER_EMAIL: blackxunmeng@gmail.com
-  
-  
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-daily-main
+  cancel-in-progress: false
+
 jobs:
-  # This workflow contains a single job called "build"
   build:
     name: update
-    # The type of runner that the job will run on
+    # A manual run on a repair branch must never publish production data.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Set up Python Env
-        uses: actions/setup-python@v1
+        uses: actions/checkout@v4
         with:
-          python-version: 3.11     
+          ref: main
+          # Preserve the existing publishing credential / Pages behavior.
+          token: ${{ secrets.GIT_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate archive and run offline tests
         run: |
-          python -m pip install --upgrade pip
-          pip install arxiv
-          pip install requests
-          pip install beautifulsoup4
-          pip install friendly-traceback
-          
-      - name: Run daily arxiv 
+          python paper_store.py validate
+          python -m unittest discover -s tests -v
+
+      - name: Crawl papers and generate summaries
         env:
-          LLM_API_KEY: ${{ secrets.PAPER_TOKEN }}  # 注入密钥到环境变量
+          LLM_API_KEY: ${{ secrets.PAPER_TOKEN }}
           LLM_PROMPT: ${{ vars.EMBODIED_PROMPT }}
+        run: python paper_daily.py
+
+      - name: Build site
+        run: python create_index.py
+
+      - name: Validate and publish generated files
         run: |
-          python paper_daily.py
-          python create_index.py
-          
-      - name: Push new robot-arxiv-daily.md
-        uses: github-actions-x/commit@v2.9
-        with:
-          github-token: ${{ secrets.GIT_TOKEN }}
-          commit-message: "Github Action Automatic Update CV Papers"
-          files: README.md arxiv_cs_ro_papers_final.json index.html
-          rebase: 'true'
-          name: ${{ env.GITHUB_USER_NAME }}
-          email: ${{ env.GITHUB_USER_EMAIL }}
+          python paper_store.py validate
+          git add -- README.md index.html data/papers
+          python scripts/check_staged_sizes.py
+          if git diff --cached --quiet; then
+            echo "No generated changes to publish"
+            exit 0
+          fi
+          git config user.name 'Xunmenggod'
+          git config user.email 'blackxunmeng@gmail.com'
+          git commit -m 'Github Action Automatic Update CV Papers'
+          # Reject concurrent main changes instead of overwriting or force-pushing.
+          git push origin HEAD:main

@@ -1,0 +1,31 @@
+name: Validate paper pipeline
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'codex/**'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python paper_store.py validate
+      - name: Render site offline
+        run: |
+          python create_index.py --output /tmp/paper-index.html
+          python -c 'from paper_daily import json_to_markdown; json_to_markdown("data/papers", "/tmp/paper-report.md")'
+      - name: Check tracked file size budget
+        run: python scripts/check_staged_sizes.py --all
