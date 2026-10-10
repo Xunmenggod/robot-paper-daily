@@ -74,7 +74,7 @@ MD_SAVE_PATH = f"README.md"
 # 工具正则
 URL_PATTERN = re.compile(r'https?://\S+|www\.\S+')
 PDF_LINK_PATTERN = re.compile(r'pdf', re.IGNORECASE)  # 匹配含PDF的链接
-LLM_SCORE_PATTERN = re.compile(r'分数：(\d+)分')  # 提取LLM返回的1-5分评分
+LLM_SCORE_PATTERN = re.compile(r'(?:相关性评分|相关性分数|评分|分数)\s*[:：]\s*([1-5])\s*分(?!\d)')
 PAGE_FIGURE_FRAGMENT_PATTERN = re.compile(
     r'\d+\s+(pages?|page)\s*,?\s*\d*\s*(figures?|figure)?\s*,?\s*\d*\s*(tables?|table)?',
     re.IGNORECASE  # 不区分大小写
@@ -242,7 +242,12 @@ class SummaryError(RuntimeError):
 
 def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_work: str) -> Dict:
     """调用LLM生成总结，并提取1-5分相关性评分"""
-    system_prompt = LLM_PROMPT
+    # Put the machine-readable score first so a token limit cannot truncate it.
+    # Keep the owner's relevance criteria and summary instructions unchanged.
+    system_prompt = (LLM_PROMPT or "") + (
+        "\n\n输出格式要求：第一行必须为‘分数：N分’，N 是 1 到 5 的整数，"
+        "按上述相关性标准评分；其后再给出论文总结。不要省略评分，不要只输出评分。"
+    )
     user_prompt = f"标题：{title}\n摘要：{abstract}\n引言：{introduction}\n相关工作:{relate_work}"
     payload = json.dumps({
         "model": LLM_MODEL,
@@ -273,10 +278,14 @@ def call_llm_for_summary(title: str, abstract: str, introduction: str,relate_wor
         # 提取总结内容
         summary = data["choices"][0]["message"]["content"].strip()
         # 提取1-5分评分（默认0分表示提取失败）
-        score_match = LLM_SCORE_PATTERN.search(summary)
-        score = int(score_match.group(1)) if score_match and 1 <= int(score_match.group(1)) <= 5 else 0
+        # Markdown emphasis and whitespace are presentation, not score semantics.
+        plain_summary = re.sub(r'[*_`]', '', summary)
+        score_match = LLM_SCORE_PATTERN.search(plain_summary)
+        score = int(score_match.group(1)) if score_match else 0
         if not summary or not score:
-            raise ValueError("LLM response has no valid summary/relevance score")
+            raise SummaryError("LLM HTTP 200 response lacks a valid 1-5 relevance score")
+        if not (plain_summary[:score_match.start()] + plain_summary[score_match.end():]).strip():
+            raise SummaryError("LLM HTTP 200 response contains a score but no summary")
         
         return {
             "summary": summary,
